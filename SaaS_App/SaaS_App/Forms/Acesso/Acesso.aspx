@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Acesso.aspx.cs" Inherits="SaaS_App.Forms.Acesso" %>
+﻿    <%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Acesso.aspx.cs" Inherits="SaaS_App.Forms.Acesso" %>
 
 <!DOCTYPE html>
 
@@ -74,7 +74,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<asp:Button runat="server" ID="register_submit" ClientIDMode="Static" tabindex="4" CssClass="form-control btn btn-register" Text="Registrar" />
+												<asp:Button runat="server" ID="register_submit" OnClick="register_submit_Click" ClientIDMode="Static" tabindex="4" CssClass="form-control btn btn-register" Text="Registrar" />
 											</div>
 										</div>
 									</div>
