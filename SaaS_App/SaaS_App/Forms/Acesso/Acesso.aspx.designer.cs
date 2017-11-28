@@ -7,7 +7,7 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace WebApplication2 {
+namespace SaaS_App.Forms {
     
     
     public partial class Acesso {

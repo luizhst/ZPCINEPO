@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Acesso.aspx.cs" Inherits="WebApplication2.Acesso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Acesso.aspx.cs" Inherits="SaaS_App.Forms.Acesso" %>
 
 <!DOCTYPE html>
 
@@ -8,9 +8,11 @@
     <title></title>
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/Login.css" />
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
-    <script type="text/javascript" src="Scripts/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="Scripts/Functions.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/Functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" rel="stylesheet" media="screen" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -33,7 +35,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<div id="login-form" role="form" style="display: block;">
+								<div id="login-form"  role="form" style="display: block;">
 									<div class="form-group">
 										<asp:TextBox runat="server" TextMode="Email" ID="username" tabindex="1" CssClass="form-control" placeholder="E-mail" value=""></asp:TextBox>
 									</div>
@@ -43,7 +45,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<asp:Button runat="server" ID="login_submit" tabindex="4" CssClass="form-control btn btn-login" Text="Acessar" />
+												<asp:Button runat="server" ID="login_submit" tabindex="4" CssClass="form-control btn btn-login" OnClick="login_submit_Click" Text="Acessar" />
 											</div>
 										</div>
 									</div>
@@ -61,18 +63,18 @@
                                 <%-- Form de Registrar Usuário --%>
 								<div id="register-form" role="form" style="display: none;">
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="registername" tabindex="1" CssClass="form-control" placeholder="E-mail" ></asp:TextBox>
+										<asp:TextBox runat="server" ID="registername" ClientIDMode="Static" tabindex="1" CssClass="form-control" placeholder="E-mail" ></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="registerpassword" tabindex="2" CssClass="form-control" placeholder="Senha"></asp:TextBox>
+										<asp:TextBox runat="server" ID="registerpassword" ClientIDMode="Static" tabindex="2" CssClass="form-control" placeholder="Senha"></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="confirm_password" tabindex="2" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
+										<asp:TextBox runat="server" ID="confirm_password" ClientIDMode="Static" tabindex="2" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
 									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<asp:Button runat="server" ID="register_submit" tabindex="4" CssClass="form-control btn btn-register" Text="Registrar" />
+												<asp:Button runat="server" ID="register_submit" ClientIDMode="Static" tabindex="4" CssClass="form-control btn btn-register" Text="Registrar" />
 											</div>
 										</div>
 									</div>
