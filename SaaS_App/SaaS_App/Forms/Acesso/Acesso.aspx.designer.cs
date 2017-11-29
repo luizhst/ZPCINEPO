@@ -22,6 +22,15 @@ namespace SaaS_App.Forms {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Controle ImgLogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImgLogo;
+        
+        /// <summary>
         /// Controle username.
         /// </summary>
         /// <remarks>

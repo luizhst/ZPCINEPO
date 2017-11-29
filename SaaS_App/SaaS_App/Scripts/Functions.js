@@ -146,4 +146,35 @@
         });
     });
 
+ $(function () {
+        // You can specify some validation options here but not rules and messages
+     $('#form1').validate();
+     jQuery.extend($.validator.messages, {
+         email: "Digite um endereço de email válido."
+     })
+        // Add a custom class to your name mangled input and add rules like this
+        $('#registername').rules('add', {
+            required: true,
+            email: true,
+            messages: {                
+                required: 'Digite um endereço de email válido.',
+            }
+        });
+    });
+
+ $("#cpf_cnpj").inputmask({
+     mask: ['999.999.999-99', '99.999.999/9999-99'],
+     keepStatic: true
+ });
+
+ $("#txFone1").inputmask({
+     mask: ['(99) 9999-9999'],
+     keepStatic: true
+ });
+
+ $("#txFone2").inputmask({
+     mask: ['(99) 99999-9999'],
+     keepStatic: true
+ });
+
 });

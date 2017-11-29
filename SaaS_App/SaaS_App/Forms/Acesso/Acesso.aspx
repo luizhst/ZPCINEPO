@@ -19,6 +19,9 @@
     <form id="form1" runat="server">
 <div class="container">
     	<div class="row">
+            <div class="col-md-12 col-md-offset-5">
+                <asp:Image runat="server" ID="ImgLogo" ImageUrl="~/img/acesso/04_Logo.png" Height="180px" Width="150px" />
+            </div>
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
 					<div class="panel-heading">
@@ -38,15 +41,17 @@
 							<div class="col-lg-12">
 								<div id="login-form"  role="form" style="display: block;">
 									<div class="form-group">
-										<asp:TextBox runat="server" TextMode="Email" ID="username" tabindex="1" CssClass="form-control" placeholder="E-mail" value=""></asp:TextBox>
+                                        <label class="control-label col-md-5">Email</label>
+										<asp:TextBox runat="server" TextMode="Email" ID="username" tabindex="1" CssClass="form-control" value=""></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" TextMode="Password" ID="password" tabindex="2" class="form-control" placeholder="Senha"></asp:TextBox>
+                                        <label class="control-label col-md-5">Senha</label>
+										<asp:TextBox runat="server" TextMode="Password" ID="password" tabindex="2" class="form-control"></asp:TextBox>
 									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<asp:Button runat="server" ID="login_submit" tabindex="4" CssClass="form-control btn btn-login" OnClick="login_submit_Click" Text="Acessar" />
+											<div class="col-sm-12 col-sm-offset-3">
+												<asp:Button runat="server" ID="login_submit" tabindex="4" Width="250px" CssClass="btn btn-info" OnClick="login_submit_Click" Text="Acessar" />
 											</div>
 										</div>
 									</div>
