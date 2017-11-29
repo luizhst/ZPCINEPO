@@ -1,29 +1,32 @@
-﻿$(function() {
+﻿$(function () {
 
     $('#login-form-link').click(function (e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
+        $("#register-form").hide("low");
+        $("#empresa-form").hide("low");
+        $("#MenuCadastro").hide("low");
+        $("#login-form").show("fast");
+        $('#register-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
     });
 
     $('#register-form-link').click(function (e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
+        $("#login-form").hide("low");
+        $("#empresa-form").hide("low");
+        $("#register-form").show("fast");
+        $("#MenuCadastro").show("fast");
+        $('#login-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
     });
 
-$('#register_submit').click(function () {
+    $('#register_submit').click(function () {
         debugger;
         var emailvalue = $('#registername').val();
         var senhavalue = $('#registerpassword').val();
         var confirmsenha = $('#confirm_password').val();
-        
-        if (emailvalue.length == 0 || senhavalue.length == 0 || confirmsenha.length == 0)
-        {
+
+        if (emailvalue.length == 0 || senhavalue.length == 0 || confirmsenha.length == 0) {
             $(function () {
                 swal({
                     title: "Atenção",
@@ -34,5 +37,113 @@ $('#register_submit').click(function () {
         }
     });
 
-});
+    $("#BtnProximoPasso").click(function (e) {
+        $("#register-form").hide("low");
+        $("#empresa-form").show("fast");
+        e.preventDefault();
 
+    });
+
+    $(document).ready(function () {
+
+        function limpa_formulário_cep() {
+            // Limpa valores do formulário de cep.
+            $("#rua").val("");
+            //$("#bairro").val("");
+            $("#cidade").val("");
+            $("#uf").val("");
+            //$("#ibge").val("");
+        }
+
+        //Quando o campo cep perde o foco.
+        $("#cep").blur(function () {
+
+            //Nova variável "cep" somente com dígitos.
+            var cep = $(this).val().replace(/\D/g, '');
+
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if (validacep.test(cep)) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    $("#rua").val("...");
+                    //$("#bairro").val("...");
+                    $("#cidade").val("...");
+                    $("#uf").val("...");
+                    //$("#ibge").val("...");
+
+                    //Consulta o webservice viacep.com.br/
+                    $.getJSON("//viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+
+                        if (!("erro" in dados)) {
+                            //Atualiza os campos com os valores da consulta.
+                            $("#rua").val(dados.logradouro);
+                            //$("#bairro").val(dados.bairro);
+                            $("#cidade").val(dados.localidade);
+                            $("#uf").val(dados.uf);
+                            //$("#ibge").val(dados.ibge);
+                        } //end if.
+                        else {
+                            //CEP pesquisado não foi encontrado.
+                            limpa_formulário_cep();
+                            alert("CEP não encontrado.");
+                        }
+                    });
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        });
+    });
+
+    $(function () {
+
+        // ## EXEMPLO 1
+        // Aciona a validação a cada tecla pressionada
+        var temporizador = false;
+        $("#cpf_cnpj").keypress(function () {
+
+            // O input que estamos utilizando
+            var input = $(this);
+
+            // Limpa o timeout antigo
+            if (temporizador) {
+                clearTimeout(temporizador);
+            }
+
+            // Cria um timeout novo de 500ms
+            temporizador = setTimeout(function () {
+                // Remove as classes de válido e inválido
+                input.removeClass('valido');
+                input.removeClass('invalido');
+
+                // O CPF ou CNPJ
+                var cpf_cnpj = input.val();
+
+                // Valida
+                var valida = valida_cpf_cnpj(cpf_cnpj);
+
+                // Testa a validação
+                if (valida) {
+                    input.addClass('valido');
+                } else {
+                    input.addClass('invalido');
+                }
+            }, 500);
+
+        });
+    });
+
+});

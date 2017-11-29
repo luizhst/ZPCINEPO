@@ -1,4 +1,4 @@
-﻿    <%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Acesso.aspx.cs" Inherits="SaaS_App.Forms.Acesso" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Acesso.aspx.cs" Inherits="SaaS_App.Forms.Acesso" %>
 
 <!DOCTYPE html>
 
@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/Login.css" />
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
@@ -62,6 +63,7 @@
 
                                 <%-- Form de Registrar Usuário --%>
 								<div id="register-form" role="form" style="display: none;">
+                                   
 									<div class="form-group">
 										<asp:TextBox runat="server" ID="registername" ClientIDMode="Static" tabindex="1" CssClass="form-control" placeholder="E-mail" ></asp:TextBox>
 									</div>
@@ -71,17 +73,109 @@
 									<div class="form-group">
 										<asp:TextBox runat="server" ID="confirm_password" ClientIDMode="Static" tabindex="2" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
 									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<asp:Button runat="server" ID="register_submit" OnClick="register_submit_Click" ClientIDMode="Static" tabindex="4" CssClass="form-control btn btn-register" Text="Registrar" />
-											</div>
-										</div>
-									</div>
+									
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-5"> 
+                                        <asp:Button runat="server" ID="BtnProximoPasso" ClientIDMode="Static" CssClass="btn btn-success" Text="Prosseguir" /> 
+                                    </div>
 								</div>
+                                </div>
+
+                                <div id="empresa-form" role="form" style="display: none;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">Empresa</label>
+                                                    <asp:TextBox runat="server" ID="txEmpresa" MaxLength="50" CssClass="form-control"></asp:TextBox> <span class="help-block"> Razão Social/Nome Fantasia </span>
+                                            </div>                                
+                                        </div>
+
+                                     <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">Responsável</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="txResponsavel" CssClass="form-control"></asp:TextBox> <span class="help-block"> Ponto Focal</span>
+                                            </div>
+                                      </div>  
+
+                                     <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">CNPJ</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="cpf_cnpj" ClientIDMode="Static" CssClass="form-control"></asp:TextBox> <span class="help-block"> CPF/CNPJ</span>
+                                            </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="row">
+                                     <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-8">Comercial</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="txFone1" CssClass="form-control"></asp:TextBox> <span class="help-block"> (34) 9999-9999</span>
+                                            </div>
+                                      </div>  
+
+                                     <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">Celular</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="txFone2" CssClass="form-control"></asp:TextBox> <span class="help-block"> (34) 99999-9999</span>
+                                            </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="row">
+                                     <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">CEP</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="cep" CssClass="form-control"></asp:TextBox> <span class="help-block"> 00000-000</span>
+                                            </div>
+                                      </div>  
+
+                                     <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">Endereço</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="rua" CssClass="form-control"></asp:TextBox> <span class="help-block"> Ex.: Avenia, Rua</span>
+                                            </div>
+                                      </div> 
+                                    </div> 
+
+                                    <div class="row">
+                                     <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">Cidade</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="cidade" CssClass="form-control"></asp:TextBox> 
+                                            </div>
+                                      </div>  
+
+                                     <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-5">Estado/UF</label>
+                                                    <asp:TextBox runat="server" MaxLength="50" ID="uf" CssClass="form-control"></asp:TextBox> 
+                                            </div>
+                                      </div> 
+                                    </div>
+
 							</div>
 						</div>
 					</div>
+                    <div class="form-group w3-margin-top" id="MenuCadastro" role="form" style="display:none;">
+                             <div class="row">
+                                   <div class="col-md-3 col-md-offset-2">
+                                        <div class="form-group">
+                                            <asp:Image runat="server" ID="ImgUser" ImageUrl="~/img/acesso/01_Icon_User_Disable.png" Height="50px" Width="50px" />
+                                        </div>
+                                   </div>
+                                   <div class="col-md-3">
+                                        <div class="form-group">
+                                            <asp:Image runat="server" ID="ImgEmpresa" ImageUrl="~/img/acesso/02_Icon_Empresa_Disable.png" Height="50px" Width="50px" />
+                                        </div>
+                                   </div>
+                                  <div class="col-md-3">
+                                        <div class="form-group">
+                                            <asp:Image runat="server" ID="ImgMenu3" ImageUrl="~/img/acesso/03_Icon_Menu3_Disable.png" Height="50px" Width="50px" />
+                                        </div>
+                                   </div>
+                             </div>
+					</div>
+                    </div>
 				</div>
 			</div>
 		</div>

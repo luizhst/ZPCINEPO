@@ -109,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="img\01_Icon_User_Disable.png" />
+    <Content Include="img\02_Icon_Empresa_Disable.png" />
+    <Content Include="img\03_Icon_Menu3_Disable.png" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <None Include="Web.Debug.config">
