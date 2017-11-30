@@ -58,31 +58,31 @@ namespace SaaS_App.Forms {
         protected global::System.Web.UI.WebControls.Button login_submit;
         
         /// <summary>
-        /// Controle registername.
+        /// Controle txt_cad_usuario.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox registername;
+        protected global::System.Web.UI.WebControls.TextBox txt_cad_usuario;
         
         /// <summary>
-        /// Controle registerpassword.
+        /// Controle txt_cad_senha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox registerpassword;
+        protected global::System.Web.UI.WebControls.TextBox txt_cad_senha;
         
         /// <summary>
-        /// Controle confirm_password.
+        /// Controle txt_cad_confirmar_senha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirm_password;
+        protected global::System.Web.UI.WebControls.TextBox txt_cad_confirmar_senha;
         
         /// <summary>
         /// Controle BtnProximoPasso.

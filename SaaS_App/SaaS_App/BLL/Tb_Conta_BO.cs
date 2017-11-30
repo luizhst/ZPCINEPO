@@ -11,6 +11,10 @@ namespace SaaS_App.BLL
 {
     public class Tb_Conta_BO
     {
+
+
+
+
         public bool InputCadastro(String vEmail, String vPassword)
         {
             
