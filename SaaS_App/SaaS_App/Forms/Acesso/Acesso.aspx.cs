@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 using SaaS_App.Entidades;
 using SaaS_App.DAL;
+using SaaS_App.BLL;
 
 namespace SaaS_App.Forms
 {
@@ -23,13 +24,18 @@ namespace SaaS_App.Forms
 
         }
 
-        protected void register_submit_Click(object sender, EventArgs e)
+
+        protected void BtnProximoPasso_Click(object sender, EventArgs e)
         {
-            Tb_Conta Obj = new Tb_Conta();
-            Obj.vDes_Login = registername.Text;
-            Obj.vDes_Senha = registerpassword.Text;
-            Tb_Conta_DAO DAO = new Tb_Conta_DAO();
-            DAO.Insert(Obj);
+            Tb_Conta_BO BO = new Tb_Conta_BO();
+            string usuario = registername.Text;
+            string senha = registerpassword.Text;
+            bool vStatusCadastro = BO.InputCadastro(usuario, senha);
+            if (vStatusCadastro == true)
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
+            }
+                ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
         }
     }
 }

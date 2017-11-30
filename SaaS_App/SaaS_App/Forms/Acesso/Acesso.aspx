@@ -74,15 +74,15 @@
 										<asp:TextBox runat="server" ID="registername" ClientIDMode="Static" tabindex="1" CssClass="form-control" placeholder="E-mail" ></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="registerpassword" ClientIDMode="Static" tabindex="2" CssClass="form-control" placeholder="Senha"></asp:TextBox>
+										<asp:TextBox runat="server" ID="registerpassword" ClientIDMode="Static" TextMode="Password" tabindex="2" CssClass="form-control" placeholder="Senha"></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="confirm_password" ClientIDMode="Static" tabindex="2" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
+										<asp:TextBox runat="server" ID="confirm_password" ClientIDMode="Static" TextMode="Password" tabindex="3" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
 									</div>
 									
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-5"> 
-                                        <asp:Button runat="server" ID="BtnProximoPasso" ClientIDMode="Static" CssClass="btn btn-success" Text="Prosseguir" /> 
+                                        <asp:Button runat="server" ID="BtnProximoPasso" ClientIDMode="Static" OnClick="BtnProximoPasso_Click" CssClass="btn btn-success" Text="Prosseguir" /> 
                                     </div>
 								</div>
                                 </div>
