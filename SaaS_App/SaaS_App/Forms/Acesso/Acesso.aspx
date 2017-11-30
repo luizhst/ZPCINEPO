@@ -87,7 +87,7 @@
 								</div>
                                 </div>
 
-                                <div id="empresa-form" role="form" style="display: none;">
+                                <div id="empresa-form" role="form" style="display:none;">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">

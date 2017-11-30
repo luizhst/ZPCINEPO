@@ -1,21 +1,4 @@
-﻿$(document).ready(function () {
-    debugger;
-    $("#register-form").hide("low");
-    $("#empresa-form").hide("low");
-    $("#MenuCadastro").hide("low");
-    $("#login-form").show("fast");
-    $('#register-form-link').removeClass('active');
-    $(this).addClass('active');
-    $("#rua").val("");
-    $("#cidade").val("");
-    $("#uf").val("");
-    $("#registername").val("");
-    $("#registerpassword").val("");
-    $("#confirm_password").val("");
-    $("#uf").val("");
-});
-
-$(function () {
+﻿$(function () {
 
     $('#login-form-link').click(function (e) {
         $("#register-form").hide("low");
@@ -54,12 +37,12 @@ $(function () {
         }
     });
 
-    $(function ProximaEtapa () {
+    function ProximaEtapa () {
         $("#register-form").hide("low");
         $("#empresa-form").show("fast");
 
 
-    });
+    };
 
     $(document).ready(function () {
 

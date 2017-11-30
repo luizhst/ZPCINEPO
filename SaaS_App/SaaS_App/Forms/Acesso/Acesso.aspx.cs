@@ -23,20 +23,9 @@ namespace SaaS_App.Forms
             //Aqui vai a função de logar
 
         }
-
-
         protected void BtnProximoPasso_Click(object sender, EventArgs e)
         {
-            Tb_Conta_BO BO = new Tb_Conta_BO();
-
-            string usuario = txt_cad_usuario.Text;
-            string senha = txt_cad_senha.Text;
-            bool vStatusCadastro = BO.InputCadastro(usuario, senha);
-            //if (vStatusCadastro == true)
-            //{
-            //    ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
-            //}
-            //    ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
+         ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
         }
     }
 }
