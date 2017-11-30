@@ -20,10 +20,11 @@ namespace SaaS_App.BLL
             Obj = DAO.Retrieve("Select * From Where vEmail = '" + vEmail + "'").FirstOrDefault();
             if (!Obj.Equals(null))
             {
-                Tb_Conta Obj = new Tb_Conta();
-                Obj.vDes_Login = registername.Text;
-                Obj.vDes_Senha = registerpassword.Text;
-                Tb_Conta_DAO DAO = new Tb_Conta_DAO();
+                Obj.vDes_Login = vEmail;
+                Obj.vDes_Senha = vPassword;
+                Obj.bFlag_Primaria = true;
+                Obj.iCod_Primaria = 1;
+                Obj.bFlag_Ativa = true;
                 DAO.Insert(Obj);
                 return true;
             }
