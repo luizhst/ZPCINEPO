@@ -19,9 +19,8 @@ namespace SaaS_App.Forms
 
         protected void login_submit_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection();
-            Conn.Conexao Connect = new Conn.Conexao();
-            conn = Connect.GetConexao();
+            //Aqui vai a função de logar
+
         }
 
         protected void register_submit_Click(object sender, EventArgs e)

@@ -13,5 +13,12 @@ namespace SaaS_App.Entidades
         public bool bFlag_Primaria { get; set; }
         public int iCod_Primaria { get; set; }
         public bool bFlag_Ativa { get; set; }
+        public DateTime dData_Cadastro { get; set; }
+
+        public override string ToString()
+        {
+            return vDes_Login;
+        }
+
     }
 }

@@ -10,6 +10,10 @@ namespace SaaS_App.BLL
 {
     public class Func_Global
     {
+        /// <summary>
+        /// Funções relacionadas a criptografia do sistema
+        /// </summary>
+        #region Criptografia
 
         String Key = ConfigurationManager.AppSettings["KeyCripto"];
         TripleDESCryptoServiceProvider Des = new TripleDESCryptoServiceProvider();
@@ -69,6 +73,8 @@ namespace SaaS_App.BLL
             
         }
 
+        #endregion
+        
 
 
         //Fim da Classe
