@@ -123,7 +123,7 @@ namespace SaaS_App.DAL
             MySqlCommand Comando = new MySqlCommand();
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("UPDATE tb_empresa SET iCod_Conta = @iCod_Conta, vNom_Empresa = @vNom_Empresa, " +
+            Sql.Append("UPDATE db_app.tb_empresa SET iCod_Conta = @iCod_Conta, vNom_Empresa = @vNom_Empresa, " +
                        "vNom_Responsavel = @vNom_Responsavel, vNum_CnpjCpf = @vNum_CnpjCpf, " +
                        "vNum_TelefoneComercial = @vNum_TelefoneComercial, vNum_Celular = @vNum_Celular" +
                        "vCep = @vCep, vCidade = @vCidade, vUf = @vUf, dData_Cadastro = @dData_Cadastro" +

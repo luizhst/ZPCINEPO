@@ -27,10 +27,11 @@ namespace SaaS_App.Forms
 
         protected void BtnProximoPasso_Click(object sender, EventArgs e)
         {
-            //Tb_Conta_BO BO = new Tb_Conta_BO();
-            //string usuario = registername.Text;
-            //string senha = registerpassword.Text;
-            //bool vStatusCadastro = BO.InputCadastro(usuario, senha);
+            Tb_Conta_BO BO = new Tb_Conta_BO();
+
+            string usuario = txt_cad_usuario.Text;
+            string senha = txt_cad_senha.Text;
+            bool vStatusCadastro = BO.InputCadastro(usuario, senha);
             //if (vStatusCadastro == true)
             //{
             //    ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
