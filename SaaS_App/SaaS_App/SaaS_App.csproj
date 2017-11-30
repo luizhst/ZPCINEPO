@@ -194,7 +194,9 @@
   <ItemGroup>
     <Compile Include="Conn\Conexao.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
+    <Compile Include="DAL\Tb_Empresa_DAO.cs" />
     <Compile Include="Entidades\Tb_Conta.cs" />
+    <Compile Include="Entidades\Tb_Empresa.cs" />
     <Compile Include="Forms\Acesso\Acesso.aspx.cs">
       <DependentUpon>Acesso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
