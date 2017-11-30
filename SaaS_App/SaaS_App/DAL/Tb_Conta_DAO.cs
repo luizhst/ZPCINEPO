@@ -144,7 +144,40 @@ namespace SaaS_App.DAL
                 }
 
             }
+        }
+        public bool Delete(string Filtro)
+        {
+
+            MySqlConnection Conexao = new MySqlConnection();
+            MySqlCommand Comando = new MySqlCommand();
+            StringBuilder Sql = new StringBuilder();
+            Sql.Append("DELETE FROM tb_empresa WHERE iCod_Empresa = '" + Filtro + "'");
+
+            try
+            {
+                Conexao = Db.GetConexao();
+                Comando.Connection = Conexao;
+                Comando.CommandText = Sql.ToString();
+                var sqltest = Sql.ToString();
+                Comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                //Fecha a conexao para não mante-la aberta
+                if (Conexao.State == System.Data.ConnectionState.Open)
+                {
+                    Conexao.Close();
+                }
+
+            }
 
         }
+
+
     }
 }
