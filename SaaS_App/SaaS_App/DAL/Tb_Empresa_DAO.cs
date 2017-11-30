@@ -19,11 +19,11 @@ namespace SaaS_App.DAL
             MySqlCommand Comando = new MySqlCommand();
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("INSERT INTO db_app.tb_empresa (vNomEmpresa, vNomResponsavel,vNumCnpjCpf, " +
-                                                        "vNumTelefoneComercial, vNumCelular, vCep," +
+            Sql.Append("INSERT INTO db_app.tb_empresa (vNom_Empresa, vNom_Responsavel,vNum_CnpjCpf, " +
+                                                        "vNum_TelefoneComercial, vNum_Celular, vCep," +
                                                         "vEndereco, vCidade, vUf ) VALUES " +
-                                                        "(@vNomEmpresa, @vNomResponsavel, @vNumCnpjCpf," +
-                                                        "@vNumTelefoneComercial, @vNumCelular, @vCep, " + "" +
+                                                        "(@vNom_Empresa, @vNom_Responsavel, @vNum_CnpjCpf," +
+                                                        "@vNum_TelefoneComercial, @vNum_Celular, @vCep, " + "" +
                                                         "@vEndereco, @vCidade, @vUf )");
 
             try
@@ -32,11 +32,11 @@ namespace SaaS_App.DAL
 
                 Comando.Connection = Conexao;
                 Comando.CommandText = Sql.ToString();
-                Comando.Parameters.AddWithValue("@vNomEmpresa", Obj.vNomEmpresa);
-                Comando.Parameters.AddWithValue("@vNomResponsavel", Obj.vNomResponsavel);
-                Comando.Parameters.AddWithValue("@vNumCnpjCpf", Obj.vNumCnpjCpf);
-                Comando.Parameters.AddWithValue("@vNumTelefoneComercial", Obj.vNumTelefoneComercial);
-                Comando.Parameters.AddWithValue("@vNumCelular", Obj.vNumCelular);
+                Comando.Parameters.AddWithValue("@vNom_Empresa", Obj.vNom_Empresa);
+                Comando.Parameters.AddWithValue("@vNom_Responsavel", Obj.vNom_Responsavel);
+                Comando.Parameters.AddWithValue("@vNum_CnpjCpf", Obj.vNum_CnpjCpf);
+                Comando.Parameters.AddWithValue("@vNum_TelefoneComercial", Obj.vNum_TelefoneComercial);
+                Comando.Parameters.AddWithValue("@vNum_Celular", Obj.vNum_Celular);
                 Comando.Parameters.AddWithValue("@vCep", Obj.vCep);
                 Comando.Parameters.AddWithValue("@vEndereco", Obj.vEndereco);
                 Comando.Parameters.AddWithValue("@vCidade", Obj.vCidade);
