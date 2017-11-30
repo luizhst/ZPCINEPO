@@ -25,7 +25,7 @@ namespace SaaS_App.Forms
         }
         protected void BtnProximoPasso_Click(object sender, EventArgs e)
         {
-         ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
+         ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa(e);", true);
         }
     }
 }

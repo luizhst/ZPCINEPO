@@ -108,7 +108,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Forms\PrincipalPage.Master" />
     <None Include="packages.config" />
+    <Content Include="Forms\Principal.aspx" />
     <Content Include="img\acesso\01_Icon_User_Disable.png" />
     <Content Include="img\acesso\02_Icon_Empresa_Disable.png" />
     <Content Include="img\acesso\03_Icon_Menu3_Disable.png" />
@@ -187,6 +189,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Style\Login.css" />
+    <Content Include="Style\TopBar.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -205,6 +208,20 @@
     </Compile>
     <Compile Include="Forms\Acesso\Acesso.aspx.designer.cs">
       <DependentUpon>Acesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrincipalPage.Master.cs">
+      <DependentUpon>PrincipalPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PrincipalPage.Master.designer.cs">
+      <DependentUpon>PrincipalPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

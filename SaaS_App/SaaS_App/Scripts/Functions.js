@@ -1,5 +1,13 @@
-﻿$(function () {
+﻿$(document).ready(function () {
+    $("#register-form").hide("low");
+    $("#empresa-form").hide("low");
+    $("#MenuCadastro").hide("low");
+    $("#login-form").show("fast");
+    $('#register-form-link').removeClass('active');
+    $(this).addClass('active');
+});
 
+$(function () {
     $('#login-form-link').click(function (e) {
         $("#register-form").hide("low");
         $("#empresa-form").hide("low");
@@ -20,6 +28,16 @@
         e.preventDefault();
     });
 
+    function ProximaEtapa(e) {
+        debugger;
+        $("#register-form").hide("low");
+        $("#login-form").hide("low");
+        $("#empresa-form").show("fast");
+        $('#register-form-link').removeClass('active');
+        $('#login-form-link').addClass('active');
+        e.preventDefault();
+    };
+
     $('#register_submit').click(function () {
         debugger;
         var emailvalue = $('#registername').val();
@@ -36,13 +54,6 @@
             })
         }
     });
-
-    function ProximaEtapa () {
-        $("#register-form").hide("low");
-        $("#empresa-form").show("fast");
-
-
-    };
 
     $(document).ready(function () {
 
@@ -176,5 +187,15 @@
      mask: ['(99) 99999-9999'],
      keepStatic: true
  });
-
 });
+
+$(document).ready(function () {
+    $('ul.nav li.dropdown').hover(function () {
+        $(this).find('.mega-dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+    }, function () {
+        $(this).find('.mega-dropdown-menu').stop(true, true).delay(200).fadeOut(200);        
+    });
+});
+
+
+

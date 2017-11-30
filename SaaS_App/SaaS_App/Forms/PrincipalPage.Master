@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PrincipalPage.Master.cs" Inherits="SaaS_App.Forms.PrincipalPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/TopBar.css" />
+    <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
+    <script type="text/javascript" src="../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Functions.js"></script>
+ 
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">        
+     <nav class="navbar navbar-default mega-nav">
+        <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#MainMenu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="MainMenu">
+            <ul class="nav navbar-nav menu-list">
+                <li><a href="#">Início</a></li>
+                <li class="dropdown list-category">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-navicon"></i> Cadastro <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown-menu mega-dropdown-menu">
+                        <li><a href="#">Produtos</a></li>
+                        <li><a href="#">Usuário Secundário</a></li>
+                        <li><a href="#">Outros</a></li>                        
+                    </ul>
+                </li>                
+                <li><a href="#">Lançamentos</a></li>
+                <li><a href="#">Relatórios</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <footer>
+        <div class="darkness"></div>
+    </footer>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">                
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
