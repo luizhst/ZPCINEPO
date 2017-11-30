@@ -82,7 +82,7 @@
 									
                                 <div class="row">
                                     <div class="col-md-3 col-md-offset-5"> 
-                                        <asp:Button runat="server" ID="BtnProximoPasso" ClientIDMode="Static" CssClass="btn btn-success" Text="Prosseguir" /> 
+                                        <asp:Button runat="server" ID="BtnProximoPasso" ClientIDMode="Static" OnClick="BtnProximoPasso_Click" CssClass="btn btn-success" Text="Prosseguir" /> 
                                     </div>
 								</div>
                                 </div>

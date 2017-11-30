@@ -37,10 +37,10 @@
         }
     });
 
-    $("#BtnProximoPasso").click(function (e) {
+    $(function ProximaEtapa () {
         $("#register-form").hide("low");
         $("#empresa-form").show("fast");
-        e.preventDefault();
+
 
     });
 
