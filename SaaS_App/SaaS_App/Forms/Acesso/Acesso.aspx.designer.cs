@@ -31,31 +31,31 @@ namespace SaaS_App.Forms {
         protected global::System.Web.UI.WebControls.Image ImgLogo;
         
         /// <summary>
-        /// Controle username.
+        /// Controle txt_login.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username;
+        protected global::System.Web.UI.WebControls.TextBox txt_login;
         
         /// <summary>
-        /// Controle password.
+        /// Controle txt_senha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
+        protected global::System.Web.UI.WebControls.TextBox txt_senha;
         
         /// <summary>
-        /// Controle login_submit.
+        /// Controle btn_logar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button login_submit;
+        protected global::System.Web.UI.WebControls.Button btn_logar;
         
         /// <summary>
         /// Controle txt_cad_usuario.
@@ -85,13 +85,22 @@ namespace SaaS_App.Forms {
         protected global::System.Web.UI.WebControls.TextBox txt_cad_confirmar_senha;
         
         /// <summary>
-        /// Controle BtnProximoPasso.
+        /// Controle ValidatorSenha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnProximoPasso;
+        protected global::System.Web.UI.WebControls.CompareValidator ValidatorSenha;
+        
+        /// <summary>
+        /// Controle btn_Valida_Cadastro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Valida_Cadastro;
         
         /// <summary>
         /// Controle txEmpresa.
