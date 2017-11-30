@@ -187,7 +187,6 @@ namespace SaaS_App.DAL
             }
             finally
             {
-                //Fecha a conexao para não mante-la aberta
                 if (Conexao.State == System.Data.ConnectionState.Open)
                 {
                     Conexao.Close();
