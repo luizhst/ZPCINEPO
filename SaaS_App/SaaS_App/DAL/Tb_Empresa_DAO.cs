@@ -23,7 +23,7 @@ namespace SaaS_App.DAL
                                                         "vNum_TelefoneComercial, vNum_Celular, vCep," +
                                                         "vEndereco, vCidade, vUf ) VALUES " +
                                                         "(@vNom_Empresa, @vNom_Responsavel, @vNum_CnpjCpf," +
-                                                        "@vNum_TelefoneComercial, @vNum_Celular, @vCep, " + "" +
+                                                        "@vNum_TelefoneComercial, @vNum_Celular, @vCep, " + 
                                                         "@vEndereco, @vCidade, @vUf )");
 
             try

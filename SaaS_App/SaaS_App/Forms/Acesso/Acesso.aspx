@@ -71,13 +71,13 @@
 								<div id="register-form" role="form" style="display: none;">
                                    
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="registername" ClientIDMode="Static" tabindex="1" CssClass="form-control" placeholder="E-mail" ></asp:TextBox>
+										<asp:TextBox runat="server" ID="txt_cad_usuario" ClientIDMode="Static" tabindex="1" CssClass="form-control" placeholder="E-mail" ></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="registerpassword" ClientIDMode="Static" TextMode="Password" tabindex="2" CssClass="form-control" placeholder="Senha"></asp:TextBox>
+										<asp:TextBox runat="server" ID="txt_cad_senha" ClientIDMode="Static" TextMode="Password" tabindex="2" CssClass="form-control" placeholder="Senha"></asp:TextBox>
 									</div>
 									<div class="form-group">
-										<asp:TextBox runat="server" ID="confirm_password" ClientIDMode="Static" TextMode="Password" tabindex="3" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
+										<asp:TextBox runat="server" ID="txt_cad_confirmar_senha" ClientIDMode="Static" TextMode="Password" tabindex="3" CssClass="form-control" placeholder="Confirmar Senha"></asp:TextBox>
 									</div>
 									
                                 <div class="row">

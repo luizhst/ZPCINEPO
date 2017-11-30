@@ -192,6 +192,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Func_Global.cs" />
     <Compile Include="BLL\Tb_Conta_BO.cs" />
     <Compile Include="Conn\Conexao.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />

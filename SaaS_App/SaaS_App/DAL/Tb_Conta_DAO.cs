@@ -19,8 +19,8 @@ namespace SaaS_App.DAL
             MySqlCommand Comando = new MySqlCommand();
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("INSERT INTO db_app.tb_conta (vDes_Login, vDes_Senha,bFlag_Primaria, iCod_Primaria, bFlag_Ativa ) VALUES " +
-                       "(@Des_User, @Des_Senha, @Flag_Primaria, @iCod_Primaria, @bFlag_Ativa )");                               
+            Sql.Append("INSERT INTO db_app.tb_conta (vDes_Login, vDes_Senha, bFlag_Primaria, iCod_Primaria, bFlag_Ativa, dData_Cadastro) VALUES " +
+                       "(@vDes_Login, @vDes_Senha, @bFlag_Primaria, @iCod_Primaria, @bFlag_Ativa, @dData_Cadastro)");                               
 
             try
             {
@@ -28,11 +28,12 @@ namespace SaaS_App.DAL
 
                 Comando.Connection = Conexao;
                 Comando.CommandText = Sql.ToString();
-                Comando.Parameters.AddWithValue("@Des_User", Obj.vDes_Login);
-                Comando.Parameters.AddWithValue("@Des_Senha", Obj.vDes_Senha);
-                Comando.Parameters.AddWithValue("@Flag_Primaria", Obj.bFlag_Primaria);
+                Comando.Parameters.AddWithValue("@vDes_Login", Obj.vDes_Login);
+                Comando.Parameters.AddWithValue("@vDes_Senha", Obj.vDes_Senha);
+                Comando.Parameters.AddWithValue("@bFlag_Primaria", Obj.bFlag_Primaria);
                 Comando.Parameters.AddWithValue("@iCod_Primaria", Obj.iCod_Primaria);
                 Comando.Parameters.AddWithValue("@bFlag_Ativa", Obj.bFlag_Ativa);
+                Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
                 Comando.ExecuteNonQuery();
                 return true;
             }
@@ -80,6 +81,7 @@ namespace SaaS_App.DAL
                         Obj.iCod_Primaria = Convert.ToInt32(Reader["iCod_Primaria"]);
                         Obj.bFlag_Primaria = Convert.ToBoolean(Reader["bFlag_Primaria"]);
                         Obj.bFlag_Ativa = Convert.ToBoolean(Reader["bFlag_Ativa"]);
+                        Obj.dData_Cadastro = Convert.ToDateTime(Reader["dData_Cadastro"]);
                         ListaContas.Add(Obj);
                     }
                 }
@@ -112,9 +114,9 @@ namespace SaaS_App.DAL
             MySqlCommand Comando = new MySqlCommand();
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("UPDATE tb_conta SET vDes_Login = @Des_User, vDes_Senha = @Des_Senha, " +
-                       "iCod_Primaria = @iCod_Primaria, bFlag_Primaria = @Flag_Primaria, " +
-                       "bFlag_Ativa = @Flag_Ativa WHERE iCod_Conta = @Cod_Conta");
+            Sql.Append("UPDATE db_app.tb_conta SET vDes_Login = @vDes_Login, vDes_Senha = @vDes_Senha, " +
+                       "iCod_Primaria = @iCod_Primaria, bFlag_Primaria = @bFlag_Primaria, " +
+                       "bFlag_Ativa = @bFlag_Ativa WHERE iCod_Conta = @iCod_Conta");
 
             try
             {
@@ -122,12 +124,12 @@ namespace SaaS_App.DAL
 
                 Comando.Connection = Conexao;
                 Comando.CommandText = Sql.ToString();
-                Comando.Parameters.AddWithValue("@Cod_Conta", Obj.iCod_Conta);
-                Comando.Parameters.AddWithValue("@Des_User", Obj.vDes_Login);
-                Comando.Parameters.AddWithValue("@Des_Senha", Obj.vDes_Senha);
+                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta);
+                Comando.Parameters.AddWithValue("@vDes_Login", Obj.vDes_Login);
+                Comando.Parameters.AddWithValue("@vDes_Senha", Obj.vDes_Senha);
                 Comando.Parameters.AddWithValue("@iCod_Primaria", Obj.iCod_Primaria);
-                Comando.Parameters.AddWithValue("@Flag_Primaria", Obj.bFlag_Primaria);
-                Comando.Parameters.AddWithValue("@Flag_Ativa", Obj.bFlag_Ativa);
+                Comando.Parameters.AddWithValue("@bFlag_Primaria", Obj.bFlag_Primaria);
+                Comando.Parameters.AddWithValue("@bFlag_Ativa", Obj.bFlag_Ativa);
                 Comando.ExecuteNonQuery();
                 return true;
 
