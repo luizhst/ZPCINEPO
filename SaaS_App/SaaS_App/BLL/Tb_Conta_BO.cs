@@ -9,30 +9,49 @@ using System.Text;
 
 namespace SaaS_App.BLL
 {
+    
     public class Tb_Conta_BO
     {
 
+        Tb_Conta_DAO DAO = new Tb_Conta_DAO();
 
-
-
-        public bool InputCadastro(String vEmail, String vPassword)
+        /// <summary>
+        /// Verifica no banco de dados se já existe alguma conta com o mesmo endereço de e-mail
+        /// </summary>
+        /// <param name="Obj"></param>
+        /// <returns></returns>
+        public bool Valida_Conta_Existente(Tb_Conta Obj)
         {
-            
-            Tb_Conta Obj = new Tb_Conta();
-            Tb_Conta_DAO DAO = new Tb_Conta_DAO();
-
-            Obj = DAO.Retrieve("Select * From Where vEmail = '" + vEmail + "'").FirstOrDefault();
-            if (!Obj.Equals(null))
+            try
             {
-                Obj.vDes_Login = vEmail;
-                Obj.vDes_Senha = vPassword;
-                Obj.bFlag_Primaria = true;
-                Obj.iCod_Primaria = 1;
-                Obj.bFlag_Ativa = true;
-                DAO.Insert(Obj);
-                return true;
+                //Faz a consulta no banco de dados
+                Tb_Conta Conta_Antiga = new Tb_Conta();
+                Conta_Antiga = DAO.Retrieve("SELECT * FROM db_app.tb_conta WHERE vDes_Login = '" + Obj.vDes_Login + "'").FirstOrDefault();
+
+                if (Conta_Antiga == null)
+                {
+                    //Insere a conta no banco de dados e retorna true se não houver nenhuma conta com o mesmo e-mail 
+                    DAO.Insert(Obj);
+                    return true;
+                }
+                else
+                {
+                    //Se houver alguma conta cadastrada com o mesmo e-mail retorna false
+                    return false;
+                }
             }
-            return false;
+            catch (Exception)
+            {
+                //Se erro retorna false (Verificar uma forma melhor de retornar caso erro)
+                return false;
+            }
         }
+
+
+        
+
+
+
+        //Final da Classe
     }
 }

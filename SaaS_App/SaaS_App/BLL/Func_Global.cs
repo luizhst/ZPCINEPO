@@ -23,7 +23,7 @@ namespace SaaS_App.BLL
         /// Criptografa o texto informado como parâmetro
         /// </summary>
         /// <param name="Texto"></param>
-        private string CifraTexto(string Texto)
+        public string CifraTexto(string Texto)
         {
 
             try
@@ -51,7 +51,7 @@ namespace SaaS_App.BLL
         /// Decriptografa o texto informado como parâmetro
         /// </summary>
         /// <param name="Texto"></param>
-        private string DeCifraTexto(string Texto)
+        public string DeCifraTexto(string Texto)
         {
 
             try
