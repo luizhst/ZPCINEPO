@@ -192,6 +192,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Func_Global.cs" />
     <Compile Include="Conn\Conexao.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
     <Compile Include="DAL\Tb_Empresa_DAO.cs" />
@@ -206,9 +207,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
