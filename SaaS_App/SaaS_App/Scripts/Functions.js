@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    debugger;
     $("#register-form").hide("low");
     $("#empresa-form").hide("low");
     $("#MenuCadastro").hide("low");
@@ -12,8 +13,8 @@
     $("#registerpassword").val("");
     $("#confirm_password").val("");
     $("#uf").val("");
-    e.preventDefault();
-}
+});
+
 $(function () {
 
     $('#login-form-link').click(function (e) {
