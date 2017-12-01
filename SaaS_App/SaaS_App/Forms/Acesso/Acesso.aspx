@@ -28,7 +28,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div id="divSize" class="col-xs-6">
-                                    <a href="#" style="display:none" class="active" id="login-form-link">Acessar</a>
+                                    <a href="#"  class="active" id="login-form-link">Acessar</a>
                                 </div>
                                 <div id="colSize" class="col-xs-6">
                                     <a href="#" id="register-form-link">Registrar</a>
