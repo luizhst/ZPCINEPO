@@ -52,16 +52,16 @@ namespace SaaS_App.Forms
             Obj.bFlag_Primaria = true;
 
             //Verificando se existe conta com este usuário e senha
-            if(Conta_BO.Valida_Conta_Existente(Obj) == true) {
-                ScriptManager.RegisterStartupScript(this, GetType(), "MoveNext", "ProximaEtapa()", true);
-            }
-            else
-            {
-                //Faz Nada
-            }
+            //if (Conta_BO.Valida_Conta_Existente(Obj) == true)
+            //{
+            //    ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "ProximaEtapa();", true);
+            //}
+            //else
+            //{
+            //    //Faz Nada
+            //}
 
-
-
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "ProximaEtapa();", true);
 
         }
     }

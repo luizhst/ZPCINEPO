@@ -32,6 +32,7 @@ namespace SaaS_App.BLL
                 {
                     //Insere a conta no banco de dados e retorna true se não houver nenhuma conta com o mesmo e-mail 
                     DAO.Insert(Obj);
+
                     return true;
                 }
                 else

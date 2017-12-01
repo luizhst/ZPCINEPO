@@ -27,10 +27,10 @@
                     <div class="panel panel-login">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-xs-6">
-                                    <a href="#" class="active" id="login-form-link">Acessar</a>
+                                <div id="divSize" class="col-xs-6">
+                                    <a href="#" style="display:none" class="active" id="login-form-link">Acessar</a>
                                 </div>
-                                <div class="col-xs-6">
+                                <div id="colSize" class="col-xs-6">
                                     <a href="#" id="register-form-link">Registrar</a>
                                 </div>
                             </div>

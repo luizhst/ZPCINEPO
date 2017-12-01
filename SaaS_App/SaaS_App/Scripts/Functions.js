@@ -1,13 +1,4 @@
-﻿$(document).ready(function () {
-    $("#register-form").hide("low");
-    $("#empresa-form").hide("low");
-    $("#MenuCadastro").hide("low");
-    $("#login-form").show("fast");
-    $('#register-form-link').removeClass('active');
-    $(this).addClass('active');
-});
-
-$(function () {
+﻿$(function () {
     $('#login-form-link').click(function (e) {
         $("#register-form").hide("low");
         $("#empresa-form").hide("low");
@@ -28,15 +19,7 @@ $(function () {
         e.preventDefault();
     });
 
-    function ProximaEtapa(e) {
-        debugger;
-        $("#register-form").hide("low");
-        $("#login-form").hide("low");
-        $("#empresa-form").show("fast");
-        $('#register-form-link').removeClass('active');
-        $('#login-form-link').addClass('active');
-        e.preventDefault();
-    };
+
 
     $('#register_submit').click(function () {
         debugger;
@@ -197,5 +180,15 @@ $(document).ready(function () {
     });
 });
 
-
+function ProximaEtapa() {
+    debugger;
+    $("#register-form").hide("low");
+    $("#login-form").hide("low");
+    $('#login-form-link').hide("low");
+    $("#empresa-form").show("fast");
+    $('#register-form-link').addClass('active');
+    $('#colSize').removeClass('col-xs-6');
+    $('#colSize').addClass('col-xs-12');
+    
+};
 

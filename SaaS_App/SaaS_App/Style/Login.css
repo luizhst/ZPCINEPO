@@ -32,7 +32,14 @@
             .panel-login > .panel-heading a.active {
                 color: #029f5b;
                 font-size: 18px;
+                text-align: center !important;
             }
+
+            /*.panel-login > .panel-heading a.active {
+                color: #029f5b;
+                font-size: 18px;
+                text-align:center!important;
+            }*/
 
         .panel-login > .panel-heading hr {
             margin-top: 10px;
