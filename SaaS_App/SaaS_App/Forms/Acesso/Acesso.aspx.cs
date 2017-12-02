@@ -46,8 +46,6 @@ namespace SaaS_App.Forms.Acesso
             //Verificando se existe conta com este usuário e senha
             if (Conta_BO.Valida_Conta_Existente(Obj) == true)
             {
-                string vStrSuccess = "'Usuário cadastrado com sucesso!'";
-                ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
                 Response.Redirect("~/Forms/Cadastro-Empresa.aspx");
             }
             else
