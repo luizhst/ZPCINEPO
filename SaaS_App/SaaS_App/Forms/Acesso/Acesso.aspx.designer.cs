@@ -76,30 +76,30 @@ namespace SaaS_App.Forms.Acesso {
         protected global::System.Web.UI.WebControls.Button BtnRegistrar;
         
         /// <summary>
-        /// Controle txEmail.
+        /// Controle txt_Email.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txEmail;
+        protected global::System.Web.UI.WebControls.TextBox txt_Email;
         
         /// <summary>
-        /// Controle txPassword.
+        /// Controle txt_Senha.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txPassword;
+        protected global::System.Web.UI.WebControls.TextBox txt_Senha;
         
         /// <summary>
-        /// Controle BtnAcessar.
+        /// Controle Btn_Acessar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAcessar;
+        protected global::System.Web.UI.WebControls.Button Btn_Acessar;
     }
 }

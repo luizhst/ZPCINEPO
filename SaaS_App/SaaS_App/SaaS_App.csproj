@@ -112,6 +112,7 @@
     <Content Include="Forms\NavPage.Master" />
     <None Include="packages.config" />
     <Content Include="Forms\Acesso\Acesso.aspx" />
+    <Content Include="Forms\Principal.aspx" />
     <Content Include="img\acesso\01_Icon_User_Disable.png" />
     <Content Include="img\acesso\02_Icon_Empresa_Disable.png" />
     <Content Include="img\acesso\03_Icon_Menu3_Disable.png" />
@@ -199,6 +200,7 @@
   <ItemGroup>
     <Compile Include="BLL\Func_Global.cs" />
     <Compile Include="BLL\Tb_Conta_BO.cs" />
+    <Compile Include="BLL\Tb_Empresa_BO.cs" />
     <Compile Include="Conn\Conexao.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
     <Compile Include="DAL\Tb_Empresa_DAO.cs" />
@@ -224,6 +226,13 @@
     </Compile>
     <Compile Include="Forms\NavPage.Master.designer.cs">
       <DependentUpon>NavPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

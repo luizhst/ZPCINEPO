@@ -21,10 +21,10 @@ namespace SaaS_App.DAL
 
             Sql.Append("INSERT INTO db_app.tb_empresa (vNom_Empresa, vNom_Responsavel,vNum_CnpjCpf, " +
                                                         "vNum_TelefoneComercial, vNum_Celular, vCep," +
-                                                        "vEndereco, vCidade, vUf, dData_Cadastro) VALUES " +
+                                                        "vEndereco, vCidade, vUf, dData_Cadastro, iCod_Conta) VALUES " +
                                                         "(@vNom_Empresa, @vNom_Responsavel, @vNum_CnpjCpf," +
                                                         "@vNum_TelefoneComercial, @vNum_Celular, @vCep, " +
-                                                        "@vEndereco, @vCidade, @vUf, @dData_Cadastro)");
+                                                        "@vEndereco, @vCidade, @vUf, @dData_Cadastro, @iCod_Conta)");
 
             try
             {
@@ -42,6 +42,7 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@vCidade", Obj.vCidade);
                 Comando.Parameters.AddWithValue("@vUf", Obj.vUf);
                 Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
+                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta);
 
                 Comando.ExecuteNonQuery();
                 return true;
@@ -101,8 +102,9 @@ namespace SaaS_App.DAL
                 }
                 Reader.Close();
             }
-            catch
+            catch(Exception ex)
             {
+                string erro = ex.Message;
                 return null;
             }
             finally
@@ -147,6 +149,7 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@vCidade", Obj.vCidade);
                 Comando.Parameters.AddWithValue("@vUf", Obj.vUf);
                 Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
+                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta);
 
                 Comando.ExecuteNonQuery();
                 return true;

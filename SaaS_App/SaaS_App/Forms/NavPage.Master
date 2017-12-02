@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" rel="stylesheet" media="screen" />
     <%--<link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/Login.css" />--%>
-    
+
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="../../Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../Scripts/Functions.js"></script>
@@ -37,7 +37,7 @@
             <Scripts>
                 <%--Para saber mais sobre scripts de agrupamento no ScriptManager, consulte https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Scripts do Framework--%>
-<%--                <asp:ScriptReference Name="MsAjaxBundle" />
+                <%--                <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="respond" />
@@ -62,18 +62,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="#">AGI - Controle de Gestão</a>
+                    <a class="navbar-brand" runat="server" href="~/Forms/Principal.aspx">AGI - Controle de Gestão</a>
                 </div>
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
 
-                        <li class="active"><a runat="server" href="#">Principal <span class="sr-only">(current)</span></a></li>
-                        <li><a runat="server" href="#">Alguma Coisa</a></li>
+                        <li><a runat="server" href="~/Forms/Principal.aspx">Principal <span class="sr-only">(current)</span></a></li>
                         <li class="dropdown">
-                            <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Alguma Coisa 2 <span class="caret"></span></a>
+                            <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastro<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" href="#">Menu 1</a></li>
+                                <li><a runat="server" href="~/Forms/Cadastro-Empresa.aspx">Empresa</a></li>
                                 <li><a runat="server" href="#">Menu 2</a></li>
                                 <li><a runat="server" href="#">Menu 3</a></li>
                                 <%--<li runat="server" class="divider"></li>--%>

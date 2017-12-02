@@ -94,12 +94,12 @@ namespace SaaS_App.Forms {
         protected global::System.Web.UI.WebControls.TextBox txt_Uf;
         
         /// <summary>
-        /// Controle BtnRegistrar.
+        /// Controle btn_Registrar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRegistrar;
+        protected global::System.Web.UI.WebControls.Button btn_Registrar;
     }
 }

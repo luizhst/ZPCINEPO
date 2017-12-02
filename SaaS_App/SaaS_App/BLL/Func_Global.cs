@@ -5,6 +5,8 @@ using System.Web;
 using System.Security.Cryptography;
 using System.Text;
 using System.Configuration;
+using SaaS_App.DAL;
+using SaaS_App.Entidades;
 
 namespace SaaS_App.BLL
 {
@@ -70,11 +72,48 @@ namespace SaaS_App.BLL
             {
                 return "";
             }
-            
+
         }
 
         #endregion
-        
+
+
+        ///Funções relacionadas a validações da conta
+        #region Validações Gerais da Conta
+        /// <summary>
+        /// Verifica se a conta logada já possui empresa cadastrada
+        /// </summary>
+        /// <param name="iCod_Conta"></param>
+        /// <returns></returns>
+        public string Verifica_Cad_Empresa(string iCod_Conta)
+        {
+
+            Tb_Empresa_DAO DAO = new Tb_Empresa_DAO();
+            Tb_Empresa Obj = new Tb_Empresa();
+
+            try
+            {
+
+                Obj = DAO.Retrieve("SELECT * FROM db_app.tb_empresa WHERE iCod_Conta = " + iCod_Conta).FirstOrDefault();
+
+                if (Obj != null)
+                {
+                    return Obj.iCod_Empresa.ToString();
+                }
+                else
+                {
+                    return "0";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+
+        }
+
+        #endregion
 
 
         //Fim da Classe

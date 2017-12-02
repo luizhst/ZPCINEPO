@@ -49,13 +49,13 @@
                                     <div class="login-form">
                                         <div class="form-details">
                                             <label class="mail">
-                                                <asp:TextBox TextMode="Email" CssClass="mail" runat="server" placeholder="E-mail" required="true" ID="tx_cad_email"></asp:TextBox>
+                                                <asp:TextBox TextMode="Email" CssClass="mail" runat="server" placeholder="E-mail" ID="tx_cad_email"></asp:TextBox>
                                             </label>
                                             <label class="pass">
-                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" required="true" ID="tx_cad_senha"></asp:TextBox>
+                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="tx_cad_senha"></asp:TextBox>
                                             </label>
                                             <label class="pass">
-                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" required="true" ID="tx_cad_confirmasenha"></asp:TextBox>
+                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="tx_cad_confirmasenha"></asp:TextBox>
                                             </label>
                                             <asp:CompareValidator ID="cv_senha" runat="server" ErrorMessage="CompareValidator" ControlToCompare="tx_cad_senha" ControlToValidate="tx_cad_confirmasenha" Text="As senhas não coincidem!"></asp:CompareValidator>
                                         </div>
@@ -71,13 +71,13 @@
                                     <div class="login-form">
                                         <div class="form-details">
                                             <label class="user">
-                                                <asp:TextBox TextMode="Email" CssClass="mail" runat="server" placeholder="E-mail" ID="txEmail"></asp:TextBox>
+                                                <asp:TextBox TextMode="Email" CssClass="mail" required="true" runat="server" placeholder="E-mail" ID="txt_Email"></asp:TextBox>
                                             </label>
                                             <label class="pass">
-                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="txPassword"></asp:TextBox>
+                                                <asp:TextBox TextMode="Password" CssClass="password" required="true" runat="server" placeholder="Senha" ID="txt_Senha"></asp:TextBox>
                                             </label>
                                         </div>
-                                        <asp:Button runat="server" CssClass="form-btn btn-success" ID="BtnAcessar" Text="Acessar" />
+                                        <asp:Button runat="server" CssClass="form-btn btn-success" ID="Btn_Acessar" OnClick="Btn_Acessar_Click" Text="Acessar" />
                                     </div>
                                 </div>
                             </div>

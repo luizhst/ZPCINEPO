@@ -20,6 +20,5 @@ namespace SaaS_App.Entidades
         public string vUf { get; set; }
         public DateTime dData_Cadastro { get; set; }
 
-
     }
 }
