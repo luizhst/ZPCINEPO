@@ -20,7 +20,7 @@ namespace SaaS_App.DAL
             StringBuilder Sql = new StringBuilder();
 
             Sql.Append("INSERT INTO db_app.tb_conta (vDes_Login, vDes_Senha, bFlag_Primaria, iCod_Primaria, bFlag_Ativa, dData_Cadastro) VALUES " +
-                       "(@vDes_Login, @vDes_Senha, @bFlag_Primaria, @iCod_Primaria, @bFlag_Ativa, @dData_Cadastro)");                               
+                       "(@vDes_Login, @vDes_Senha, @bFlag_Primaria, @iCod_Primaria, @bFlag_Ativa, @dData_Cadastro)");
 
             try
             {
@@ -88,7 +88,6 @@ namespace SaaS_App.DAL
 
                 Reader.Close();
 
-
             }
             catch
             {
@@ -134,7 +133,7 @@ namespace SaaS_App.DAL
                 return true;
 
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -147,7 +146,7 @@ namespace SaaS_App.DAL
 
             }
         }
-        
+
 
 
     }

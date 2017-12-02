@@ -49,9 +49,7 @@ namespace SaaS_App.Forms.Acesso
                 //Verificando se existe conta com este usuário e senha
                 if (Conta_BO.Valida_Conta_Existente(Obj) == true)
                 {
-                    string vStrSuccess = "'Usuário cadastrado com sucesso!'";
-                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
-                    Response.Redirect("~/Forms/Cadastro-Empresa.aspx");
+                    Acessar_Registro(Usuario, Senha);
                 }
                 else
                 {
@@ -73,7 +71,9 @@ namespace SaaS_App.Forms.Acesso
         }
 
 
-
+        /// <summary>
+        /// Acessar a partir da tela de login
+        /// </summary>
         public void Acessar()
         {
 
@@ -112,7 +112,46 @@ namespace SaaS_App.Forms.Acesso
                 ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrWarning + ");", true);
             }
 
-               
+        }
+
+
+        /// <summary>
+        /// acessar a partir da tela de cadastro
+        /// </summary>
+        /// <param name="Usuario"></param>
+        /// <param name="Senha"></param>
+        public void Acessar_Registro(string Usuario, string Senha)
+        {
+            //Variaveis Locais
+           
+            if (Usuario != "" || Senha != "")
+            {
+
+                //Registra o Obj do usuário
+                Tb_Conta Usuario_Logado = new Tb_Conta();
+                Usuario_Logado = Conta_BO.Valida_Login(Usuario, Senha);
+
+                if (Usuario_Logado != null)
+                {
+                    //define o usuário logado na sessão
+                    Session["ID_USUARIO"] = Usuario_Logado.iCod_Conta;
+
+                    string vStrSuccess = "'Usuario autenticado com sucesso, você será direcionado agora...'";
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
+                    Response.Redirect("~/Forms/Principal.aspx");
+
+                }
+                else
+                {
+                    string vStrWarning = "'Usuário sem cadastro no sistema! Registre-se para continuar.'";
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrWarning + ");", true);
+                }
+            }
+            else
+            {
+                string vStrWarning = "'Preencha todos os campos para continuar!'";
+                ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrWarning + ");", true);
+            }
 
         }
 
