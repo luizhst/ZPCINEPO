@@ -108,13 +108,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Forms\PrincipalPage.Master" />
+    <Content Include="Forms\Cadastro-Empresa.aspx" />
+    <Content Include="Forms\NavPage.Master" />
     <None Include="packages.config" />
-    <Content Include="Forms\Principal.aspx" />
+    <Content Include="Forms\Acesso\Acesso.aspx" />
     <Content Include="img\acesso\01_Icon_User_Disable.png" />
     <Content Include="img\acesso\02_Icon_Empresa_Disable.png" />
     <Content Include="img\acesso\03_Icon_Menu3_Disable.png" />
-    <Content Include="img\acesso\04_Logo.png" />
+    <Content Include="img\acesso\04_Logotipo.png" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.js" />
     <Content Include="Scripts\inputmask\bindings\inputmask.binding.min.js" />
     <Content Include="Scripts\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
@@ -153,6 +154,7 @@
     <Content Include="Scripts\inputmask\phone-codes\phone.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,7 +163,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Forms\Acesso\Acesso.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -209,19 +210,19 @@
     <Compile Include="Forms\Acesso\Acesso.aspx.designer.cs">
       <DependentUpon>Acesso.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrincipalPage.Master.cs">
-      <DependentUpon>PrincipalPage.Master</DependentUpon>
+    <Compile Include="Forms\Cadastro-Empresa.aspx.cs">
+      <DependentUpon>Cadastro-Empresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forms\PrincipalPage.Master.designer.cs">
-      <DependentUpon>PrincipalPage.Master</DependentUpon>
+    <Compile Include="Forms\Cadastro-Empresa.aspx.designer.cs">
+      <DependentUpon>Cadastro-Empresa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Principal.aspx.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
+    <Compile Include="Forms\NavPage.Master.cs">
+      <DependentUpon>NavPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Forms\Principal.aspx.designer.cs">
-      <DependentUpon>Principal.aspx</DependentUpon>
+    <Compile Include="Forms\NavPage.Master.designer.cs">
+      <DependentUpon>NavPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,7 +10,7 @@
 namespace SaaS_App.Forms {
     
     
-    public partial class PrincipalPage {
+    public partial class NavPage {
         
         /// <summary>
         /// Controle head.
