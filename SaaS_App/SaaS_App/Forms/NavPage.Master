@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavPage.master.cs" Inherits="SaaS_App.Forms.NavPage" %>
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/TopBar.css" />
+    <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
+    <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/Functions.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.inputmask.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" rel="stylesheet" media="screen" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed left" data-toggle="collapse" data-target="#menu">
+        <span class="sr-only">Trình đơn</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AGI</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#search">
+     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Principal <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link khác</a></li>
+            <li><a href="#">Cái gì đó</a></li>
+            <li class="divider"></li>
+            <li><a href="#">khác</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Chắc một cái gì đó sẽ nằm ở đây thôi :))</a></li>
+          </ul>
+        </li>   
+      </ul> 
+ <!--<ul class="nav navbar-nav navbar-right">
+ <form class="navbar-form navbar-right hidden-sm hidden-md hidden-xs" role="search" action="/" method="GET">
+      <div class="input-group">
+      <input type="text" class="form-control" placeholder="Tìm kiếm..."/>
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="button">Tìm kiếm</button>
+      </span>
+      </form>
+ </ul>-->
+    </div><!-- /.navbar-collapse #search -->
+  </div><!-- /.container -->
+</nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
