@@ -13,84 +13,93 @@ namespace SaaS_App.Forms {
     public partial class Cadastro_Empresa {
         
         /// <summary>
-        /// Controle txEmpresa.
+        /// Controle txt_Empresa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txEmpresa;
+        protected global::System.Web.UI.WebControls.TextBox txt_Empresa;
         
         /// <summary>
-        /// Controle txResponsavel.
+        /// Controle txt_Responsavel.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txResponsavel;
+        protected global::System.Web.UI.WebControls.TextBox txt_Responsavel;
         
         /// <summary>
-        /// Controle cpf_cnpj.
+        /// Controle txt_CpfCnpj.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cpf_cnpj;
+        protected global::System.Web.UI.WebControls.TextBox txt_CpfCnpj;
         
         /// <summary>
-        /// Controle txFone1.
+        /// Controle txt_Fone1.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txFone1;
+        protected global::System.Web.UI.WebControls.TextBox txt_Fone1;
         
         /// <summary>
-        /// Controle txFone2.
+        /// Controle txt_Fone2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txFone2;
+        protected global::System.Web.UI.WebControls.TextBox txt_Fone2;
         
         /// <summary>
-        /// Controle cep.
+        /// Controle txt_Cep.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cep;
+        protected global::System.Web.UI.WebControls.TextBox txt_Cep;
         
         /// <summary>
-        /// Controle rua.
+        /// Controle txt_Rua.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox rua;
+        protected global::System.Web.UI.WebControls.TextBox txt_Rua;
         
         /// <summary>
-        /// Controle cidade.
+        /// Controle txt_Cidade.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cidade;
+        protected global::System.Web.UI.WebControls.TextBox txt_Cidade;
         
         /// <summary>
-        /// Controle uf.
+        /// Controle txt_Uf.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uf;
+        protected global::System.Web.UI.WebControls.TextBox txt_Uf;
+        
+        /// <summary>
+        /// Controle BtnRegistrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnRegistrar;
     }
 }
