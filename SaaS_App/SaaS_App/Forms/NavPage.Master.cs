@@ -13,36 +13,22 @@ namespace SaaS_App.Forms
         {
 
             Valida_Login();
-
+            
         }
 
+        /// <summary>
+        /// Faz a validação se existe sessão ativa no momento do load
+        /// </summary>
         public void Valida_Login()
         {
             string Conta = Session["ID_USUARIO"].ToString();
 
             if (Conta == null)
             {
-                Encerrar_Sessao();
+                Response.Redirect("~/Forms/Sair.aspx");
             }
 
         }
 
-        public void Encerrar_Sessao()
-        {
-            
-            try
-            {
-                Session["ID_USUARIO"] = null;
-                Session["EMPRESA"] = null;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-            Response.Redirect("~/Forms/Acesso/Acesso.aspx");
-
-        }
     }
 }

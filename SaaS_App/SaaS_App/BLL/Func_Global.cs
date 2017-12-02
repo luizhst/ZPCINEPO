@@ -115,7 +115,6 @@ namespace SaaS_App.BLL
 
         #endregion
 
-
         //Fim da Classe
     }
 }

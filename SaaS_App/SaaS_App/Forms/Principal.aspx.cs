@@ -28,7 +28,6 @@ namespace SaaS_App.Forms
                 Response.Redirect("~/Forms/Sair.aspx");
             }
             
-
             //Caso já tenha sido verificado o ID_EMPRESA, não há necessidade de ficar verificando a cada load da pagina principal
             if(ID_EMPRESA == null)
             {
@@ -50,7 +49,7 @@ namespace SaaS_App.Forms
             //Se não houver empresa cadastrada para aquela conta, sempre redireciona para a tela de cadastro de empresa
             if (ID_EMPRESA == "0")
             {
-                Response.Redirect("~/Forms/Cadastro-Empresa.aspx");
+                Response.Redirect("~/Forms/Cadastro/Cadastro-Empresa.aspx");
             }
                         
         }

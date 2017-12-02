@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/NavPage.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="SaaS_App.Forms.Principal" %>
+﻿<%@ Page Title="Pagina Principal" Language="C#" MasterPageFile="~/Forms/NavPage.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="SaaS_App.Forms.Principal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     <br />
