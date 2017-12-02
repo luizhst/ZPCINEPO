@@ -6,7 +6,7 @@
     });
 }
 
-function Msg_Warning(StrError) {
+function Msg_Error(StrError) {
     swal({
         title: 'Erro',
         type: 'error',
@@ -14,7 +14,7 @@ function Msg_Warning(StrError) {
     });
 }
 
-function Msg_Warning(StrSuccess) {
+function Msg_Sucesso(StrSuccess) {
     swal({
         title: 'Sucesso',
         type: 'success',
