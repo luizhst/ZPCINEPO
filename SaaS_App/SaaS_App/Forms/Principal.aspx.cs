@@ -19,7 +19,15 @@ namespace SaaS_App.Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             //Pega a conta logada para usar como parâmetro global
-            ID_USUARIO = Session["ID_USUARIO"].ToString();
+            try
+            {
+                ID_USUARIO = Session["ID_USUARIO"].ToString();
+            }
+            catch (Exception)
+            {
+                Response.Redirect("~/Forms/Sair.aspx");
+            }
+            
 
             //Caso já tenha sido verificado o ID_EMPRESA, não há necessidade de ficar verificando a cada load da pagina principal
             if(ID_EMPRESA == null)

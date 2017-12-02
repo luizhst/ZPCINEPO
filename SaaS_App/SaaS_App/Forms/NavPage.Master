@@ -78,7 +78,7 @@
                                 <%--<li runat="server" class="divider"></li>--%>
                                 <li><a runat="server" href="#">Menu 4</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="#">Sair da Conta</a></li>
+                                <li><a runat="server" href="~/Forms/Sair.aspx">Sair da Conta</a></li>
                             </ul>
                         </li>
 

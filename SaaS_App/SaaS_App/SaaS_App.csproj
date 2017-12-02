@@ -113,6 +113,7 @@
     <None Include="packages.config" />
     <Content Include="Forms\Acesso\Acesso.aspx" />
     <Content Include="Forms\Principal.aspx" />
+    <Content Include="Forms\Sair.aspx" />
     <Content Include="img\acesso\01_Icon_User_Disable.png" />
     <Content Include="img\acesso\02_Icon_Empresa_Disable.png" />
     <Content Include="img\acesso\03_Icon_Menu3_Disable.png" />
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="Forms\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sair.aspx.cs">
+      <DependentUpon>Sair.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Sair.aspx.designer.cs">
+      <DependentUpon>Sair.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

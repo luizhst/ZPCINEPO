@@ -7,29 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace SaaS_App.Forms
 {
-    public partial class NavPage : System.Web.UI.MasterPage
+    public partial class Sair : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Valida_Login();
-
-        }
-
-        public void Valida_Login()
-        {
-            string Conta = Session["ID_USUARIO"].ToString();
-
-            if (Conta == null)
-            {
-                Encerrar_Sessao();
-            }
-
+            Encerrar_Sessao();
         }
 
         public void Encerrar_Sessao()
         {
-            
+
             try
             {
                 Session["ID_USUARIO"] = null;
@@ -37,7 +24,6 @@ namespace SaaS_App.Forms
             }
             catch (Exception)
             {
-
                 throw;
             }
 
