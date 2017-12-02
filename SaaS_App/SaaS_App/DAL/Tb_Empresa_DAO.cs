@@ -21,10 +21,10 @@ namespace SaaS_App.DAL
 
             Sql.Append("INSERT INTO db_app.tb_empresa (vNom_Empresa, vNom_Responsavel,vNum_CnpjCpf, " +
                                                         "vNum_TelefoneComercial, vNum_Celular, vCep," +
-                                                        "vEndereco, vCidade, vUf ) VALUES " +
+                                                        "vEndereco, vCidade, vUf, dData_Cadastro) VALUES " +
                                                         "(@vNom_Empresa, @vNom_Responsavel, @vNum_CnpjCpf," +
-                                                        "@vNum_TelefoneComercial, @vNum_Celular, @vCep, " + 
-                                                        "@vEndereco, @vCidade, @vUf )");
+                                                        "@vNum_TelefoneComercial, @vNum_Celular, @vCep, " +
+                                                        "@vEndereco, @vCidade, @vUf, @dData_Cadastro)");
 
             try
             {
@@ -41,6 +41,7 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@vEndereco", Obj.vEndereco);
                 Comando.Parameters.AddWithValue("@vCidade", Obj.vCidade);
                 Comando.Parameters.AddWithValue("@vUf", Obj.vUf);
+                Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
 
                 Comando.ExecuteNonQuery();
                 return true;
