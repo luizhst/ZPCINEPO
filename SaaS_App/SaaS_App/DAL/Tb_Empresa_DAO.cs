@@ -128,8 +128,8 @@ namespace SaaS_App.DAL
 
             Sql.Append("UPDATE db_app.tb_empresa SET iCod_Conta = @iCod_Conta, vNom_Empresa = @vNom_Empresa, " +
                        "vNom_Responsavel = @vNom_Responsavel, vNum_CnpjCpf = @vNum_CnpjCpf, " +
-                       "vNum_TelefoneComercial = @vNum_TelefoneComercial, vNum_Celular = @vNum_Celular" +
-                       "vCep = @vCep, vCidade = @vCidade, vUf = @vUf, dData_Cadastro = @dData_Cadastro" +
+                       "vNum_TelefoneComercial = @vNum_TelefoneComercial, vNum_Celular = @vNum_Celular," +
+                       "vCep = @vCep, vCidade = @vCidade, vUf = @vUf " +
                        " WHERE iCod_Empresa = @iCod_Empresa");
 
             try
@@ -148,15 +148,14 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@vCep", Obj.vCep);
                 Comando.Parameters.AddWithValue("@vCidade", Obj.vCidade);
                 Comando.Parameters.AddWithValue("@vUf", Obj.vUf);
-                Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
-                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta);
 
                 Comando.ExecuteNonQuery();
                 return true;
 
             }
-            catch
+            catch (Exception ex)
             {
+                var erro = ex.Message;
                 return false;
             }
             finally
@@ -169,13 +168,15 @@ namespace SaaS_App.DAL
             }
 
         }
+
+
         public bool Delete(string Filtro)
         {
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
             StringBuilder Sql = new StringBuilder();
-            Sql.Append("DELETE FROM tb_empresa WHERE iCod_Empresa = '" + Filtro + "'");
+            Sql.Append("DELETE FROM db_app.tb_empresa WHERE iCod_Empresa = '" + Filtro + "'");
 
             try
             {

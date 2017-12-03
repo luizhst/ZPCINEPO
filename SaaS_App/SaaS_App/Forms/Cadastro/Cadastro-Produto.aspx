@@ -68,32 +68,59 @@
                             <br />
 
                             <div>
-                                <asp:Button runat="server" CssClass="btn btn-success" ID="btn_Registrar" Text="Cadastrar" />
+                                <asp:Button runat="server" CssClass="btn btn-success" ID="btn_Registrar" OnClick="btn_Registrar_Click" Text="Cadastrar" />
                             </div>
                         </div>
 
                     </div>
                 </div>
                 <div class="panel-wrapper collapse in" aria-expanded="false">
-                <div class="panel-body">
+                    <div class="panel-body">
 
-                    <div class="form-body">
-                        <h4 class="box-title">Produtos Cadastrados</h4>
-                        <hr>
+                        <div class="form-body">
+                            <h4 class="box-title">Produtos Cadastrados</h4>
+                            <hr>
+                        </div>
+
+                        <div>
+                            <%--Tabela com os produtos cadastrados--%>
+                            <asp:GridView ID="grid_produtos" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
+
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
+                                        <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
+                                        <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Valor Custo" ItemStyle-Width="10%">
+                                        <ItemTemplate>R$ <%#Eval("dPreco_Custo") %> </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Valor Venda" ItemStyle-Width="10%">
+                                        <ItemTemplate>R$ <%#Eval("dPreco_Venda") %> </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Total em Estoque" ItemStyle-Width="15%">
+                                        <ItemTemplate><%#Eval("vQtd_Estoque") %> </ItemTemplate>
+                                    </asp:TemplateField>
+
+                                    <asp:TemplateField HeaderText="Estoque Minimo" ItemStyle-Width="15%">
+                                        <ItemTemplate><%#Eval("vQtd_Min_Estoque") %> </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+
+                            </asp:GridView>
+
+                        </div>
+
                     </div>
-
-                    <div>
-                           <%--Tabela com os produtos cadastrados--%>
-
-                        Tabela com todos os produtos cadastrados do cliente logado AQUI
-
-                    </div>
-
                 </div>
             </div>
-            </div>
 
-            
+
         </div>
     </div>
 

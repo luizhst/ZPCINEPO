@@ -30,8 +30,10 @@ namespace SaaS_App.BLL
                 }
                 else
                 {
-                    //Se houver alguma conta cadastrada com o mesmo e-mail retorna false
-                    return "Já existe uma empresa cadastrada para essa conta!";
+                    Obj.iCod_Empresa = Empresa.iCod_Empresa;
+                    DAO.Update(Obj);
+                    return "2";
+
                 }
 
             }
@@ -40,6 +42,39 @@ namespace SaaS_App.BLL
                 string erro = ex.Message;
                 return erro;
             }
+        }
+
+
+        /// <summary>
+        /// Busca as informações da empresa cadastrada para a conta selecionada
+        /// </summary>
+        /// <param name="iCod_Conta"></param>
+        /// <returns></returns>
+        public Tb_Empresa Busca_Empresa(string iCod_Conta)
+        {
+
+            try
+            {
+                Tb_Empresa Obj = new Tb_Empresa();
+                Obj = DAO.Retrieve("SELECT * FROM db_app.tb_empresa WHERE iCod_Conta = " + iCod_Conta).FirstOrDefault();
+
+                if(Obj != null)
+                {
+                    return Obj;
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch
+            {
+
+                return null;
+            
+            }            
+
         }
 
         //Fim da Classe

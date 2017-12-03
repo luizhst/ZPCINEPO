@@ -108,10 +108,10 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Conta<span class="caret"></span></a>
+                            <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Minha Conta<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
 
-                                <li><a runat="server" href="#">Alterar Senha</a></li>
+                                <%--<li><a runat="server" href="#">Alterar Senha</a></li>--%>
                                 <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Empresa.aspx">Alterar Dados Empresa</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" href="~/Forms/Sair.aspx" title="Sair da Conta">Sair da Conta</a></li>

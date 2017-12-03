@@ -13,7 +13,7 @@ namespace SaaS_App.DAL
     {
         Conn.Conexao Db = new Conn.Conexao();
 
-        public Boolean Insert(Tb_Conta Obj)
+        public string Insert(Tb_Conta Obj)
         {
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
@@ -35,11 +35,11 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@bFlag_Ativa", Obj.bFlag_Ativa);
                 Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
                 Comando.ExecuteNonQuery();
-                return true;
+                return "1";
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                return ex.Message.ToString();
             }
             finally
             {

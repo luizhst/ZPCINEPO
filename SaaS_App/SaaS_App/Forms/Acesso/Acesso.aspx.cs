@@ -46,16 +46,24 @@ namespace SaaS_App.Forms.Acesso
                 Obj.bFlag_Ativa = true;
                 Obj.bFlag_Primaria = true;
 
+                string retorno = Conta_BO.Valida_Conta_Existente(Obj);
+
                 //Verificando se existe conta com este usuário e senha
-                if (Conta_BO.Valida_Conta_Existente(Obj) == true)
+                if (retorno == "1")
                 {
                     Acessar_Registro(Usuario, Senha);
                 }
-                else
+                else if (retorno == "0")
                 {
                     string vStrWarning = "'Usuário já cadastrado no sistema!'";
                     ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrWarning + ");", true);
                 }
+                else
+                {
+                    string vStrWarning = "'" + retorno + "'";
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrWarning + ");", true);
+                }
+
             }
             else
             {

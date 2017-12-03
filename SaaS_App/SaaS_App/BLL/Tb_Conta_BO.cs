@@ -21,10 +21,16 @@ namespace SaaS_App.BLL
         /// </summary>
         /// <param name="Obj"></param>
         /// <returns></returns>
-        public bool Valida_Conta_Existente(Tb_Conta Obj)
+        public string Valida_Conta_Existente(Tb_Conta Obj)
         {
+
+            
+
             try
             {
+
+                string retorno = "";
+
                 //Faz a consulta no banco de dados
                 Tb_Conta Conta_Antiga = new Tb_Conta();
                 Conta_Antiga = DAO.Retrieve("SELECT * FROM db_app.tb_conta WHERE vDes_Login = '" + Obj.vDes_Login + "'").FirstOrDefault();
@@ -32,20 +38,24 @@ namespace SaaS_App.BLL
                 if (Conta_Antiga == null)
                 {
                     //Insere a conta no banco de dados e retorna true se não houver nenhuma conta com o mesmo e-mail 
-                    DAO.Insert(Obj);
+                    string var = DAO.Insert(Obj);
 
-                    return true;
+                    if (var != "1")
+                    {
+                        retorno = "0";
+                    }
+
+                    retorno =  "1";
+
                 }
-                else
-                {
-                    //Se houver alguma conta cadastrada com o mesmo e-mail retorna false
-                    return false;
-                }
+
+                return retorno;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //Se erro retorna false (Verificar uma forma melhor de retornar caso erro)
-                return false;
+                string erro = ex.Message.ToString();
+                return erro;
             }
         }
 
@@ -76,7 +86,7 @@ namespace SaaS_App.BLL
 
             }
         }
-        
+
 
         //Final da Classe
     }
