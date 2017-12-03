@@ -18,6 +18,7 @@ namespace SaaS_App.DAL
         {
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
             Sql.Append("INSERT INTO db_app.tb_produto (iCod_Conta, vNom_Produto, dPreco_Custo, " +
@@ -63,6 +64,7 @@ namespace SaaS_App.DAL
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
             Sql.Append("UPDATE db_app.tb_produto SET vNom_Produto = @vNom_Produto, dPreco_Custo = @dPreco_Custo, " +
@@ -110,6 +112,7 @@ namespace SaaS_App.DAL
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
             Sql.Append("DELETE FROM db_app.tb_produto WHERE iCod_Produto = '" + iCod_Produto + "'");
 
@@ -144,12 +147,14 @@ namespace SaaS_App.DAL
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            
             //MySqlDataReader Reader = new MySqlDataReader();
 
             try
             {
                 Conexao = Db.GetConexao();
 
+                Comando.CommandTimeout = 120;
                 Comando.CommandText = Sql;
                 Comando.CommandType = System.Data.CommandType.Text;
                 Comando.Connection = Conexao;

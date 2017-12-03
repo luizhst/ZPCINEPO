@@ -17,6 +17,7 @@ namespace SaaS_App.DAL
         {
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
             Sql.Append("INSERT INTO db_app.tb_empresa (vNom_Empresa, vNom_Responsavel,vNum_CnpjCpf, " +
@@ -67,6 +68,7 @@ namespace SaaS_App.DAL
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            Comando.CommandTimeout = 120;
             //MySqlDataReader Reader = new MySqlDataReader();
 
             try
@@ -124,6 +126,7 @@ namespace SaaS_App.DAL
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
+            Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
             Sql.Append("UPDATE db_app.tb_empresa SET iCod_Conta = @iCod_Conta, vNom_Empresa = @vNom_Empresa, " +
