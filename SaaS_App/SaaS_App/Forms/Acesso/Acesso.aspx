@@ -74,7 +74,7 @@
                                                 <asp:TextBox TextMode="Email" CssClass="mail" required="true" runat="server" placeholder="E-mail" ID="txt_Email">nova@conta.com.br</asp:TextBox>
                                             </label>
                                             <label class="pass">
-                                                <asp:TextBox TextMode="Password" CssClass="password" required="true" runat="server" placeholder="Senha" ID="txt_Senha">123</asp:TextBox>
+                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="txt_Senha">123</asp:TextBox>
                                             </label>
                                         </div>
                                         <asp:Button runat="server" CssClass="form-btn btn-success" ID="Btn_Acessar" OnClick="Btn_Acessar_Click" Text="Acessar" />
