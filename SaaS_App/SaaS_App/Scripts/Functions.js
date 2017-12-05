@@ -4,7 +4,7 @@
         type: 'warning',
         text: StrWaring
     });
-}
+};
 
 function Msg_Error(StrError) {
     swal({
@@ -12,7 +12,7 @@ function Msg_Error(StrError) {
         type: 'error',
         text: StrError
     });
-}
+};
 
 function Msg_Sucesso(StrSuccess) {
     swal({
@@ -20,7 +20,7 @@ function Msg_Sucesso(StrSuccess) {
         type: 'success',
         text: StrSuccess
     });
-}
+};
 
 $(document).ready(function () {
 
@@ -124,20 +124,20 @@ $(function () {
     });
 });
 
- $("#cpf_cnpj").inputmask({
-     mask: ['999.999.999-99', '99.999.999/9999-99'],
-     keepStatic: true
- });
+ //$("#cpf_cnpj").inputmask({
+ //    mask: ['999.999.999-99', '99.999.999/9999-99'],
+ //    keepStatic: true
+ //});
 
- $("#txFone1").inputmask({
-     mask: ['(99) 9999-9999'],
-     keepStatic: true
- });
+ //$("#txFone1").inputmask({
+ //    mask: ['(99) 9999-9999'],
+ //    keepStatic: true
+ //});
 
- $("#txFone2").inputmask({
-     mask: ['(99) 99999-9999'],
-     keepStatic: true
- });
+ //$("#txFone2").inputmask({
+ //    mask: ['(99) 99999-9999'],
+ //    keepStatic: true
+ //});
 
 //$(document).ready(function () {
 //    $('ul.nav li.dropdown').hover(function () {

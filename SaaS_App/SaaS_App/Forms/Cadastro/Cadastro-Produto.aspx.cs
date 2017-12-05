@@ -14,7 +14,7 @@ namespace SaaS_App.Forms.Cadastro
     {
 
         string ID_USUARIO;
-        string ID_EMPRESA;
+        //string ID_EMPRESA;
 
         Func_Global Pub = new Func_Global();
         Tb_Produto_BO Produto_BO = new Tb_Produto_BO();

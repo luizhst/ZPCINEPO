@@ -8,6 +8,7 @@ using MySql.Data.MySqlClient;
 using SaaS_App.Entidades;
 using SaaS_App.DAL;
 using SaaS_App.BLL;
+using System.Configuration;
 
 namespace SaaS_App.Forms.Acesso
 {
@@ -18,6 +19,10 @@ namespace SaaS_App.Forms.Acesso
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string StrConn = ConfigurationManager.ConnectionStrings["SaaSConnection"].ConnectionString;
+
+            Label1.Text = StrConn;
+
         }
 
         protected void BtnRegistrar_Click(object sender, EventArgs e)
@@ -103,8 +108,8 @@ namespace SaaS_App.Forms.Acesso
                     //define o usuário logado na sessão
                     Session["ID_USUARIO"] = Usuario_Logado.iCod_Conta;
 
-                    string vStrSuccess = "'Usuario autenticado com sucesso, você será direcionado agora...'";
-                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
+                    string vStrSuccess = "'Usuario autenticado com sucesso, você será direcionado agora'";
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Response.Redirect("~/Forms/Principal.aspx");
 
                 }
