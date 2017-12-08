@@ -100,6 +100,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
     </Reference>
@@ -109,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Forms\Cadastro\Cadastro-Empresa.aspx" />
+    <Content Include="Forms\Cadastro\Cadastro-Veiculo.aspx" />
+    <Content Include="Forms\Cadastro\Cadastro-Transportadora.aspx" />
     <Content Include="Forms\Cadastro\Cadastro-Produto.aspx" />
     <Content Include="Forms\NavPage.Master" />
     <None Include="packages.config" />
@@ -157,11 +162,9 @@
     <Content Include="Scripts\inputmask\phone-codes\phone.min.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
-    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\adaptgestao.com - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\zpcinepor - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\zpcinepor - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,13 +210,21 @@
     <Compile Include="BLL\Func_Global.cs" />
     <Compile Include="BLL\Tb_Conta_BO.cs" />
     <Compile Include="BLL\Tb_Empresa_BO.cs" />
+    <Compile Include="BLL\Tb_Veiculo_BO.cs" />
+    <Compile Include="BLL\Tb_Transporte_BO.cs" />
     <Compile Include="BLL\Tb_Produto_BO.cs" />
     <Compile Include="Conn\Conexao.cs" />
+    <Compile Include="DAL\Tb_Tipo_Veiculo_DAO.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
     <Compile Include="DAL\Tb_Empresa_DAO.cs" />
+    <Compile Include="DAL\Tb_Veiculo_DAO.cs" />
+    <Compile Include="DAL\Tb_Transporte_DAO.cs" />
     <Compile Include="DAL\Tb_Produto_DAO.cs" />
     <Compile Include="Entidades\Tb_Conta.cs" />
     <Compile Include="Entidades\Tb_Empresa.cs" />
+    <Compile Include="Entidades\Tb_Tipo_Veiculo.cs" />
+    <Compile Include="Entidades\Tb_Veiculo.cs" />
+    <Compile Include="Entidades\Tb_Transporte.cs" />
     <Compile Include="Entidades\Tb_Produto.cs" />
     <Compile Include="Forms\Acesso\Acesso.aspx.cs">
       <DependentUpon>Acesso.aspx</DependentUpon>
@@ -228,6 +239,20 @@
     </Compile>
     <Compile Include="Forms\Cadastro\Cadastro-Empresa.aspx.designer.cs">
       <DependentUpon>Cadastro-Empresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Cadastro-Veiculo.aspx.cs">
+      <DependentUpon>Cadastro-Veiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Cadastro-Veiculo.aspx.designer.cs">
+      <DependentUpon>Cadastro-Veiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Cadastro-Transportadora.aspx.cs">
+      <DependentUpon>Cadastro-Transportadora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Cadastro-Transportadora.aspx.designer.cs">
+      <DependentUpon>Cadastro-Transportadora.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Cadastro\Cadastro-Produto.aspx.cs">
       <DependentUpon>Cadastro-Produto.aspx</DependentUpon>

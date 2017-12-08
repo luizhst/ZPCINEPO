@@ -12,7 +12,6 @@
     <script type="text/javascript" src="../../Scripts/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="../../Scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../Scripts/Functions.js"></script>
-    <script type="text/javascript" src="../../Scripts/jquery.inputmask.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" rel="stylesheet" media="screen" />
 </head>

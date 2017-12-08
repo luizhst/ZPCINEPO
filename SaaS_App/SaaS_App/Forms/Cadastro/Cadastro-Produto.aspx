@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Preço Custo</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_PrecoCusto" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ClientIDMode="Static" ID="txt_PrecoCusto" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block"></span>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Preço Venda</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_PrecoVenda" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ClientIDMode="Static" ID="txt_PrecoVenda" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block"></span>
                                     </div>
                                 </div>

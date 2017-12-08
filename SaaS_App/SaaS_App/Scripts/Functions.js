@@ -1,4 +1,37 @@
-﻿function Msg_Warning(StrWaring) {
+﻿(function ($) {
+    $(function () {
+        $('#txt_CpfCnpj').inputmask({
+            mask: ['999.999.999-99', '99.999.999/9999-99'],
+            keepStatic: true
+        });
+
+        $('#txt_Fone1').inputmask({
+            mask: ['(99) 9999-9999'],
+            keepStatic: true
+        });
+
+        $('#txt_Fone2').inputmask({
+            mask: ['(99) 99999-9999'],
+            keepStatic: true
+        });  
+
+        $('#txt_PrecoCusto').inputmask({
+            mask: ['R$ 999.999.999,99'],
+            numericInput: true
+           
+        });
+
+        $("#txt_PrecoVenda").maskMoney({
+            prefix: "R$:",
+            decimal: ",",
+            thousands: "."
+        });
+
+    });
+})(jQuery);
+
+
+function Msg_Warning(StrWaring) {
     swal({
         title: 'Atenção',
         type: 'warning',
@@ -26,7 +59,7 @@ $(document).ready(function () {
 
     function limpa_formulário_cep() {
         // Limpa valores do formulário de cep.
-        $("#rua").val("");
+        $("#txt_Rua").val("");
         //$("#bairro").val("");
         $("#cidade").val("");
         $("#uf").val("");
@@ -34,7 +67,7 @@ $(document).ready(function () {
     }
 
     //Quando o campo cep perde o foco.
-    $("#cep").blur(function () {
+    $("#txt_Cep").blur(function () {
 
         //Nova variável "cep" somente com dígitos.
         var cep = $(this).val().replace(/\D/g, '');
@@ -49,10 +82,10 @@ $(document).ready(function () {
             if (validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
-                $("#rua").val("...");
+                $("#txt_Rua").val("...");
                 //$("#bairro").val("...");
-                $("#cidade").val("...");
-                $("#uf").val("...");
+                $("#txt_Cidade").val("...");
+                $("#txt_Uf").val("...");
                 //$("#ibge").val("...");
 
                 //Consulta o webservice viacep.com.br/
@@ -60,10 +93,10 @@ $(document).ready(function () {
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
-                        $("#rua").val(dados.logradouro);
+                        $("#txt_Rua").val(dados.logradouro);
                         //$("#bairro").val(dados.bairro);
-                        $("#cidade").val(dados.localidade);
-                        $("#uf").val(dados.uf);
+                        $("#txt_Cidade").val(dados.localidade);
+                        $("#txt_Uf").val(dados.uf);
                         //$("#ibge").val(dados.ibge);
                     } //end if.
                     else {
@@ -91,7 +124,7 @@ $(function () {
     // ## EXEMPLO 1
     // Aciona a validação a cada tecla pressionada
     var temporizador = false;
-    $("#cpf_cnpj").keypress(function () {
+    $("#txt_CpfCnpj").keypress(function () {
 
         // O input que estamos utilizando
         var input = $(this);
@@ -124,20 +157,7 @@ $(function () {
     });
 });
 
- $("#cpf_cnpj").inputmask({
-     mask: ['999.999.999-99', '99.999.999/9999-99'],
-     keepStatic: true
- });
 
- $("#txFone1").inputmask({
-     mask: ['(99) 9999-9999'],
-     keepStatic: true
- });
-
- $("#txFone2").inputmask({
-     mask: ['(99) 99999-9999'],
-     keepStatic: true
- });
 
 //$(document).ready(function () {
 //    $('ul.nav li.dropdown').hover(function () {

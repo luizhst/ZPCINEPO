@@ -144,8 +144,8 @@ namespace SaaS_App.Forms.Acesso
                     //define o usuário logado na sessão
                     Session["ID_USUARIO"] = Usuario_Logado.iCod_Conta;
 
-                    string vStrSuccess = "'Usuario autenticado com sucesso, você será direcionado agora...'";
-                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
+                    string vStrSuccess = "'Usuario autenticado com sucesso, você será direcionado agora'";
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Response.Redirect("~/Forms/Principal.aspx");
 
                 }
@@ -153,6 +153,7 @@ namespace SaaS_App.Forms.Acesso
                 {
                     string vStrWarning = "'Usuário sem cadastro no sistema! Registre-se para continuar.'";
                     ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrWarning + ");", true);
+                    Response.Redirect("~/Forms/Principal.aspx");
                 }
             }
             else

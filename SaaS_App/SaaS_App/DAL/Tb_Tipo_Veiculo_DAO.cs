@@ -9,7 +9,7 @@ using System.Text;
 
 namespace SaaS_App.DAL
 {
-    public class Tb_Conta_DAO
+    public class Tb_Tipo_Veiculo_DAO
     {
         Conn.Conexao Db = new Conn.Conexao();
 

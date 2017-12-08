@@ -25,7 +25,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Empresa</label>
-                                        <asp:TextBox runat="server" required="true" ID="txt_Empresa" MaxLength="50" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" ID="txt_Empresa" ClientIDMode="Static" MaxLength="50" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">Razão Social ou Nome Fantasia</span>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Responsável</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Responsavel" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ClientIDMode="Static" ID="txt_Responsavel" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">Ponto Focal</span>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-8">Comercial</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Fone1" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ClientIDMode="Static" ID="txt_Fone1" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">(99) 9999-9999</span>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Celular</label>
-                                        <asp:TextBox runat="server" MaxLength="50" ID="txt_Fone2" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" MaxLength="50" ID="txt_Fone2" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">(99) 99999-9999</span>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">CEP</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Cep" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ClientIDMode="Static" ID="txt_Cep" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">00000-000</span>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Endereço</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Rua" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Rua" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">Ex.: Avenia, Rua...</span>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Cidade</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Cidade" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Cidade" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">Sua Cidade</span>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Estado/UF</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Uf" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Uf" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                         <span class="help-block">Ex.: MG</span>
                                     </div>
                                 </div>

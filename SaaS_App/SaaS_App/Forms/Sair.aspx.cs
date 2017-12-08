@@ -13,6 +13,7 @@ namespace SaaS_App.Forms
         protected void Page_Load(object sender, EventArgs e)
         {
             Encerrar_Sessao();
+
         }
 
         public void Encerrar_Sessao()
