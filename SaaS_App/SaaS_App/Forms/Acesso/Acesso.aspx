@@ -1,9 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Acesso.aspx.cs" Inherits="SaaS_App.Forms.Acesso.Acesso" %>
 
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -47,6 +48,7 @@
                                     </div>
                                     <div class="login-form">
                                         <div class="form-details">
+                                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                                             <label class="mail">
                                                 <asp:TextBox TextMode="Email" CssClass="mail" runat="server" placeholder="E-mail" ID="tx_cad_email"></asp:TextBox>
                                             </label>
@@ -56,7 +58,6 @@
                                             <label class="pass">
                                                 <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="tx_cad_confirmasenha"></asp:TextBox>
                                             </label>
-                                            <asp:CompareValidator ID="cv_senha" runat="server" ErrorMessage="CompareValidator" ControlToCompare="tx_cad_senha" ControlToValidate="tx_cad_confirmasenha" Text="As senhas não coincidem!"></asp:CompareValidator>
                                         </div>
                                         <asp:Button runat="server" CssClass="form-btn btn-success" OnClick="BtnRegistrar_Click" ID="BtnRegistrar" Text="Registrar" />
                                     </div>

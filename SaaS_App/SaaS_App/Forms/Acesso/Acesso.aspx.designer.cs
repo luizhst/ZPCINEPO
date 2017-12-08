@@ -31,6 +31,15 @@ namespace SaaS_App.Forms.Acesso {
         protected global::System.Web.UI.WebControls.Image ImgLogotipo;
         
         /// <summary>
+        /// Controle Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// Controle tx_cad_email.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace SaaS_App.Forms.Acesso {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tx_cad_confirmasenha;
-        
-        /// <summary>
-        /// Controle cv_senha.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cv_senha;
         
         /// <summary>
         /// Controle BtnRegistrar.

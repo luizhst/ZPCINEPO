@@ -12,7 +12,7 @@ namespace SaaS_App.Forms
     public partial class Cadastro_Empresa : System.Web.UI.Page
     {
         string ID_USUARIO;
-        string ID_EMPRESA;
+        //string ID_EMPRESA;
 
         Func_Global Pub = new Func_Global();
         Tb_Empresa_BO Empresa_BO = new Tb_Empresa_BO();
