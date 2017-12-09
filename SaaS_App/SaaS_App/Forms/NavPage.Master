@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../../Scripts/inputmask/inputmask.js"></script>
     <script type="text/javascript" src="../../Scripts/inputmask/jquery.inputmask.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery.inputmask.bundle.js"></script>
-    <script type="text/javascript" src="../../Scripts/jquery.moneymask.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.maskMoney.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -66,7 +66,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Produto.aspx">Produto</a></li>
                                 <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Transportadora.aspx">Transportadora</a></li>
-                                <li><a runat="server" href="#">Veiculo</a></li>
+                                <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Veiculo.aspx">Veiculo</a></li>
                                 <li><a runat="server" href="#">Pessoa</a></li>
 
                                 <%--<li class="divider"></li>--%>

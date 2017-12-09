@@ -15,17 +15,14 @@
             keepStatic: true
         });  
 
-        $('#txt_PrecoCusto').inputmask({
-            mask: ['R$ 999.999.999,99'],
-            numericInput: true
-           
+        $(function () {
+            $('[id$=txt_PrecoCusto]').maskMoney({ prefix: 'R$ ', allowNegative: true, thousands: '.', decimal: ',', affixesStay: false });
         });
 
-        $("#txt_PrecoVenda").maskMoney({
-            prefix: "R$:",
-            decimal: ",",
-            thousands: "."
+        $(function () {
+            $('[id$=txt_PrecoVenda]').maskMoney({ prefix: 'R$ ', allowNegative: true, thousands: '.', decimal: ',', affixesStay: false });
         });
+        txt_PrecoVenda
 
     });
 })(jQuery);

@@ -21,8 +21,8 @@ namespace SaaS_App.DAL
             Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("INSERT INTO db_app.tb_transporte (vNom_Transportadora, vDes_Observacao) VALUES " +
-                                                        "(@vNom_Transportadora, @vDes_Observacao)");
+            Sql.Append("INSERT INTO db_app.tb_transporte (vNom_Transportadora, vDes_Observacao, iCod_Empresa) VALUES " +
+                                                        "(@vNom_Transportadora, @vDes_Observacao, @iCod_Empresa)");
 
             try
             {
@@ -32,6 +32,7 @@ namespace SaaS_App.DAL
                 Comando.CommandText = Sql.ToString();
                 Comando.Parameters.AddWithValue("@vNom_Transportadora", Obj.vNom_Transportadora);
                 Comando.Parameters.AddWithValue("@vDes_Observacao", Obj.vDes_Observacao);
+                Comando.Parameters.AddWithValue("@iCod_Empresa", Obj.iCod_Empresa);
                 Comando.ExecuteNonQuery();
                 return "1";
             }
@@ -57,8 +58,8 @@ namespace SaaS_App.DAL
             Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("UPDATE db_app.tb_transporte SET vNom_Transportadora = @vNom_Transportadora, vDes_Observacao = @vDes_Observacao" +
-                       " WHERE iCod_Produto = @iCod_Produto");
+            Sql.Append("UPDATE db_app.tb_transporte SET vNom_Transportadora = @vNom_Transportadora, vDes_Observacao = @vDes_Observacao, iCod_Empresa = @iCod_Empresa" +
+                       " WHERE iCod_Transporte = @iCod_Transporte");
 
             try
             {
@@ -66,6 +67,7 @@ namespace SaaS_App.DAL
 
                 Comando.Connection = Conexao;
                 Comando.CommandText = Sql.ToString();
+                Comando.Parameters.AddWithValue("@iCod_Transporte", Obj.iCod_Transporte);
                 Comando.Parameters.AddWithValue("@vNom_Transportadora", Obj.vNom_Transportadora);
                 Comando.Parameters.AddWithValue("@vDes_Observacao", Obj.vDes_Observacao);
                 Comando.ExecuteNonQuery();
@@ -151,6 +153,7 @@ namespace SaaS_App.DAL
 
                         Obj.iCod_Transporte = Convert.ToInt32(Reader["iCod_Transporte"]);
                         Obj.vNom_Transportadora = Convert.ToString(Reader["vNom_Transportadora"]);
+                        Obj.iCod_Empresa = Convert.ToInt32(Reader["iCod_Empresa"]);
                         Obj.vDes_Observacao = Convert.ToString(Reader["vDes_Observacao"]);
                         Lista.Add(Obj);
                     }
