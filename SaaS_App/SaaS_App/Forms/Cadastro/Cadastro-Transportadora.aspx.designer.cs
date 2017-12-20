@@ -22,6 +22,42 @@ namespace SaaS_App.Forms.Cadastro {
         protected global::System.Web.UI.WebControls.TextBox txt_NomeTransportadora;
         
         /// <summary>
+        /// Controle txt_telefone1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telefone1;
+        
+        /// <summary>
+        /// Controle txt_telefone2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telefone2;
+        
+        /// <summary>
+        /// Controle txt_telefone3.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telefone3;
+        
+        /// <summary>
+        /// Controle txt_telefone4.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_telefone4;
+        
+        /// <summary>
         /// Controle txt_Observacao.
         /// </summary>
         /// <remarks>
@@ -38,14 +74,5 @@ namespace SaaS_App.Forms.Cadastro {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Registrar;
-        
-        /// <summary>
-        /// Controle grid_transportes.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grid_transportes;
     }
 }

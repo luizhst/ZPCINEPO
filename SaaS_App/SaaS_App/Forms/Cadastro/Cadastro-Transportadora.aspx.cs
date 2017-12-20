@@ -16,7 +16,7 @@ namespace SaaS_App.Forms.Cadastro
         string ID_USUARIO;
 
         Func_Global Pub = new Func_Global();
-        Tb_Transporte_BO Transporte_BO = new Tb_Transporte_BO();
+        Tb_Transportadora_BO Transporte_BO = new Tb_Transportadora_BO();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace SaaS_App.Forms.Cadastro
             try
             {
                 ID_USUARIO = Session["ID_USUARIO"].ToString();
-                Carregar_Transportes();
+                //Response.Redirect("~/Forms/Cadastro/Lista-Transportadoras.aspx");
             }
             catch (Exception)
             {
@@ -35,27 +35,17 @@ namespace SaaS_App.Forms.Cadastro
 
         }
 
-        /// <summary>
-        /// Atualiza a lista de produtos na página
-        /// </summary>
-        public void Carregar_Transportes()
-        {
 
-            List<Tb_Transporte> transportes = new List<Tb_Transporte>();
-
-            transportes = Transporte_BO.Buscar_Transporte(ID_USUARIO);            
-            grid_transportes.DataSource = null;
-            grid_transportes.DataSource = transportes;
-            grid_transportes.DataBind();
-
-        }
 
         public void Limpa_Campos()
         {
             txt_NomeTransportadora.Text = "";
+            txt_telefone1.Text = "";
+            txt_telefone2.Text = "";
+            txt_telefone3.Text = "";
+            txt_telefone4.Text = "";
             txt_Observacao.Text = "";
  
-
         }
 
 
@@ -65,25 +55,33 @@ namespace SaaS_App.Forms.Cadastro
             try
             {
 
-                Tb_Transporte Obj = new Tb_Transporte();
+                Tb_Transportadora Obj = new Tb_Transportadora();
+                Obj.iCod_Conta = new Tb_Conta();
+
                 Obj.vNom_Transportadora = txt_NomeTransportadora.Text;
                 Obj.vDes_Observacao = txt_Observacao.Text;
+                Obj.vTelefone1 = txt_telefone1.Text;
+                Obj.vTelefone2 = txt_telefone2.Text;
+                Obj.vTelefone3 = txt_telefone3.Text;
+                Obj.vTelefone4 = txt_telefone4.Text;
+                Obj.iCod_Conta.iCod_Conta = Convert.ToInt32(ID_USUARIO);
+
                 string retorno;
-                retorno = Transporte_BO.Valida_Transporte(Obj);
+                retorno = Transporte_BO.Valida_Transportadora(Obj);
 
                 if (retorno == "1")
                 {
                     string vStrSuccess = "'Transportadora cadastrado com sucesso!'";
                     ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Limpa_Campos();
-                    Carregar_Transportes();
+                    Response.Redirect("~/Forms/Cadastro/Lista-Transportadoras.aspx");
                 }
                 else if (retorno == "2")
                 {
                     string vStrSuccess = "'Transportadora atualizado com sucesso!'";
                     ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Limpa_Campos();
-                    Carregar_Transportes();
+                    Response.Redirect("~/Forms/Cadastro/Lista-Transportadoras.aspx");
 
                 }
                 else

@@ -115,6 +115,8 @@
     <Content Include="Forms\Cadastro\Cadastro-Veiculo.aspx" />
     <Content Include="Forms\Cadastro\Cadastro-Transportadora.aspx" />
     <Content Include="Forms\Cadastro\Cadastro-Produto.aspx" />
+    <Content Include="Forms\Cadastro\Lista-Produtos.aspx" />
+    <Content Include="Forms\Cadastro\Lista-Transportadoras.aspx" />
     <Content Include="Forms\NavPage.Master" />
     <None Include="packages.config" />
     <Content Include="Forms\Acesso\Acesso.aspx" />
@@ -212,20 +214,20 @@
     <Compile Include="BLL\Tb_Conta_BO.cs" />
     <Compile Include="BLL\Tb_Empresa_BO.cs" />
     <Compile Include="BLL\Tb_Veiculo_BO.cs" />
-    <Compile Include="BLL\Tb_Transporte_BO.cs" />
+    <Compile Include="BLL\Tb_Transportadora_BO.cs" />
     <Compile Include="BLL\Tb_Produto_BO.cs" />
     <Compile Include="Conn\Conexao.cs" />
     <Compile Include="DAL\Tb_Tipo_Veiculo_DAO.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
     <Compile Include="DAL\Tb_Empresa_DAO.cs" />
     <Compile Include="DAL\Tb_Veiculo_DAO.cs" />
-    <Compile Include="DAL\Tb_Transporte_DAO.cs" />
+    <Compile Include="DAL\Tb_Transportadora_DAO.cs" />
     <Compile Include="DAL\Tb_Produto_DAO.cs" />
     <Compile Include="Entidades\Tb_Conta.cs" />
     <Compile Include="Entidades\Tb_Empresa.cs" />
     <Compile Include="Entidades\Tb_Tipo_Veiculo.cs" />
     <Compile Include="Entidades\Tb_Veiculo.cs" />
-    <Compile Include="Entidades\Tb_Transporte.cs" />
+    <Compile Include="Entidades\Tb_Transportadora.cs" />
     <Compile Include="Entidades\Tb_Produto.cs" />
     <Compile Include="Forms\Acesso\Acesso.aspx.cs">
       <DependentUpon>Acesso.aspx</DependentUpon>
@@ -261,6 +263,20 @@
     </Compile>
     <Compile Include="Forms\Cadastro\Cadastro-Produto.aspx.designer.cs">
       <DependentUpon>Cadastro-Produto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Lista-Produtos.aspx.cs">
+      <DependentUpon>Lista-Produtos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Lista-Produtos.aspx.designer.cs">
+      <DependentUpon>Lista-Produtos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Lista-Transportadoras.aspx.cs">
+      <DependentUpon>Lista-Transportadoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Cadastro\Lista-Transportadoras.aspx.designer.cs">
+      <DependentUpon>Lista-Transportadoras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\NavPage.Master.cs">
       <DependentUpon>NavPage.Master</DependentUpon>

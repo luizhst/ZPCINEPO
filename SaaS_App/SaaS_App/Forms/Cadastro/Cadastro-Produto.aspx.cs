@@ -26,7 +26,7 @@ namespace SaaS_App.Forms.Cadastro
             try
             {
                 ID_USUARIO = Session["ID_USUARIO"].ToString();
-                Carrega_Produtos();
+                //Carrega_Produtos();
             }
             catch (Exception)
             {
@@ -39,19 +39,7 @@ namespace SaaS_App.Forms.Cadastro
         /// <summary>
         /// Atualiza a lista de produtos na página
         /// </summary>
-        public void Carrega_Produtos()
-        {
 
-            List<Tb_Produto> produtos = new List<Tb_Produto>();
-
-            produtos = Produto_BO.Buscar_Produtos(ID_USUARIO);
-            
-            grid_produtos.DataSource = null;
-            grid_produtos.DataSource = produtos;
-
-            grid_produtos.DataBind();
-
-        }
 
         public void Limpa_Campos()
         {
@@ -87,16 +75,17 @@ namespace SaaS_App.Forms.Cadastro
                 if (retorno == "1")
                 {
                     string vStrSuccess = "'Produto cadastrado com sucesso!'";
-                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Limpa_Campos();
-                    Carrega_Produtos();
+                    Response.Redirect("~/Forms/Cadastro/Lista-Produtos.aspx");
+                    
                 }
                 else if (retorno == "2")
                 {
                     string vStrSuccess = "'Produto atualizado com sucesso!'";
-                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Warning(" + vStrSuccess + ");", true);
+                    ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Limpa_Campos();
-                    Carrega_Produtos();
+                    Response.Redirect("~/Forms/Cadastro/Lista-Produtos.aspx");
 
                 }
                 else

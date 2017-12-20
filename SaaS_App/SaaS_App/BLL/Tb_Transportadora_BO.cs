@@ -8,25 +8,25 @@ using SaaS_App.BLL;
 
 namespace SaaS_App.BLL
 {
-    public class Tb_Transporte_BO
+    public class Tb_Transportadora_BO
     {
 
-        Tb_Transporte_DAO DAO = new Tb_Transporte_DAO();
+        Tb_Transportadora_DAO DAO = new Tb_Transportadora_DAO();
 
         /// <summary>
         /// Carrega a lista de produtos cadastrados no banco de dados
         /// </summary>
         /// <param name="ID_USUARIO"></param>
         /// <returns></returns>
-        public List<Tb_Transporte> Buscar_Transporte(string ID_USUARIO)
+        public List<Tb_Transportadora> Buscar_Transporte(string ID_USUARIO)
         {
 
-            List<Tb_Transporte> Lista = new List<Tb_Transporte>();
+            List<Tb_Transportadora> Lista = new List<Tb_Transportadora>();
 
             try
             {
 
-                Lista = DAO.Retrieve("SELECT * FROM db_app.tb_transporte ").ToList(); //WHERE iCod_Transporte = " + ID_USUARIO).ToList();
+                Lista = DAO.Retrieve("SELECT * FROM db_app.tb_transportadora ").ToList(); //WHERE iCod_Transporte = " + ID_USUARIO).ToList();
 
             }
             catch (Exception)
@@ -43,15 +43,15 @@ namespace SaaS_App.BLL
         /// </summary>
         /// <param name="Obj"></param>
         /// <returns></returns>
-        public string Valida_Transporte(Tb_Transporte Obj)
+        public string Valida_Transportadora(Tb_Transportadora Obj)
         {
             try
             {
                 //Faz a consulta no banco de dados
-                Tb_Transporte Transporte = new Tb_Transporte();
-                Transporte = DAO.Retrieve("SELECT * FROM db_app.tb_transporte WHERE iCod_Transporte = '" + Obj.iCod_Transporte + "' AND vNom_Transportadora = '" + Obj.vNom_Transportadora + "'").FirstOrDefault();
+                Tb_Transportadora Transportadora = new Tb_Transportadora();
+                Transportadora = DAO.Retrieve("SELECT * FROM db_app.tb_transportadora WHERE iCod_Transportadora = '" + Obj.iCod_Transportadora + "' AND vNom_Transportadora = '" + Obj.vNom_Transportadora + "'").FirstOrDefault();
 
-                if (Transporte == null)
+                if (Transportadora == null)
                 {
                     //Insere a conta no banco de dados e retorna true se não houver nenhuma conta com o mesmo e-mail 
                     DAO.Insert(Obj);
@@ -59,7 +59,7 @@ namespace SaaS_App.BLL
                 }
                 else
                 {
-                    Obj.iCod_Transporte = Transporte.iCod_Transporte;
+                    Obj.iCod_Transportadora = Transportadora.iCod_Transportadora;
                     DAO.Update(Obj);
                     return "2";
                 }

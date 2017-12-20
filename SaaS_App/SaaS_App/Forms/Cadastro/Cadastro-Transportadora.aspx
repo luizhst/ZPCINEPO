@@ -10,7 +10,7 @@
             <div class="panel panel-info">
 
                 <div class="panel-heading" style="border: unset">
-                    <h4>TRANSPORTES</h4>
+                    <h4>TRANSPORTADORA</h4>
                 </div>
 
                 <div class="panel-wrapper collapse in" aria-expanded="false">
@@ -29,15 +29,41 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-5">Telefone 1</label>
+                                    <asp:TextBox runat="server" ID="txt_telefone1" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-5">Telefone 2</label>
+                                    <asp:TextBox runat="server" ID="txt_telefone2" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-5">Telefone 3</label>
+                                    <asp:TextBox runat="server" ID="txt_telefone3" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label col-md-5">Telefone 4</label>
+                                    <asp:TextBox runat="server" ID="txt_telefone4" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label col-md-5">Observação</label>
-                                        <asp:TextBox runat="server" required="true" MaxLength="50" ID="txt_Observacao" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
+                                        <asp:TextBox runat="server" MaxLength="50" ID="txt_Observacao" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
                                         <span class="help-block"></span>
                                     </div>
                                 </div>
-                            </div>                           
+                            </div>
                             <br />
 
                             <div>
@@ -47,31 +73,7 @@
 
                     </div>
                 </div>
-                <div class="panel-wrapper collapse in" aria-expanded="false">
-                    <div class="panel-body">
 
-                        <div class="form-body">
-                            <h4 class="box-title">Transportadoras Cadastradas</h4>
-                            <hr>
-                        </div>
-
-                        <div>
-                            <%--Tabela com os produtos cadastrados--%>
-                            <asp:GridView ID="grid_transportes" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
-                                <Columns>
-                                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
-                                        <ItemTemplate><%#Eval("iCod_Transporte") %> </ItemTemplate>
-                                    </asp:TemplateField>
-
-                                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
-                                        <ItemTemplate><%#Eval("vNom_Transportadora") %> </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
-                        </div>
-
-                    </div>
-                </div>
             </div>
 
 

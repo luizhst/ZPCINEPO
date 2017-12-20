@@ -52,10 +52,10 @@
                         <li class="dropdown">
                             <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Controle<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" href="#">Entrada Produtos</a></li>
-                                <li><a runat="server" href="#">Saída Produtos</a></li>
+                                <li><a runat="server" enable="false" href="#">Entrada Produtos</a></li>
+                                <li><a runat="server" enable="false" href="#">Saída Produtos</a></li>
                                 <li class="divider"></li>
-                                <li><a runat="server" href="#">Acerto Veiculos</a></li>
+                                <li><a runat="server" enable="false" href="#">Acerto Veiculos</a></li>
 
                                 <%--<li class="divider"></li>--%>
                             </ul>
@@ -64,10 +64,10 @@
                         <li class="dropdown">
                             <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastro<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Produto.aspx">Produto</a></li>
-                                <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Transportadora.aspx">Transportadora</a></li>
-                                <li><a runat="server" href="~/Forms/Cadastro/Cadastro-Veiculo.aspx">Veiculo</a></li>
-                                <li><a runat="server" href="#">Pessoa</a></li>
+                                <li><a runat="server" href="~/Forms/Cadastro/Lista-Produtos.aspx">Produto</a></li>
+                                <li><a runat="server" href="~/Forms/Cadastro/Lista-Transportadoras.aspx">Transportadora</a></li>
+                                <%--<li><a runat="server" href="~/Forms/Cadastro/Cadastro-Veiculo.aspx">Veiculo</a></li>
+                                <li><a runat="server" href="#">Pessoa</a></li>--%>
 
                                 <%--<li class="divider"></li>--%>
                             </ul>

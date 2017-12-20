@@ -13,7 +13,11 @@
         $('#txt_Fone2').inputmask({
             mask: ['(99) 99999-9999'],
             keepStatic: true
-        });  
+		});  
+
+		$(function () {
+			$('[id$=txt_QtdEstoque]').mask({ allowNegative: true, thousands: '.', affixesStay: false });
+		});
 
         $(function () {
             $('[id$=txt_PrecoCusto]').maskMoney({ prefix: 'R$ ', allowNegative: true, thousands: '.', decimal: ',', affixesStay: false });

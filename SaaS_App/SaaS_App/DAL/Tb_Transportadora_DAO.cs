@@ -9,20 +9,20 @@ using System.Text;
 
 namespace SaaS_App.DAL
 {
-    public class Tb_Transporte_DAO
+    public class Tb_Transportadora_DAO
     {
 
         Conn.Conexao Db = new Conn.Conexao();
 
-        public string Insert(Tb_Transporte Obj)
+        public string Insert(Tb_Transportadora Obj)
         {
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
             Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("INSERT INTO db_app.tb_transporte (vNom_Transportadora, vDes_Observacao, iCod_Empresa) VALUES " +
-                                                        "(@vNom_Transportadora, @vDes_Observacao, @iCod_Empresa)");
+            Sql.Append("INSERT INTO db_app.tb_transportadora (vNom_Transportadora, vDes_Observacao, iCod_Conta, vTelefone1, vTelefone2, vTelefone3, vTelefone4) VALUES " +
+                                                        "(@vNom_Transportadora, @vDes_Observacao, @iCod_Conta, @vTelefone1, @vTelefone2, @vTelefone3, @vTelefone4)");
 
             try
             {
@@ -32,7 +32,12 @@ namespace SaaS_App.DAL
                 Comando.CommandText = Sql.ToString();
                 Comando.Parameters.AddWithValue("@vNom_Transportadora", Obj.vNom_Transportadora);
                 Comando.Parameters.AddWithValue("@vDes_Observacao", Obj.vDes_Observacao);
-                Comando.Parameters.AddWithValue("@iCod_Empresa", Obj.iCod_Empresa);
+                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta.iCod_Conta);
+                Comando.Parameters.AddWithValue("@vTelefone1", Obj.vTelefone1);
+                Comando.Parameters.AddWithValue("@vTelefone2", Obj.vTelefone2);
+                Comando.Parameters.AddWithValue("@vTelefone3", Obj.vTelefone3);
+                Comando.Parameters.AddWithValue("@vTelefone4", Obj.vTelefone4);
+
                 Comando.ExecuteNonQuery();
                 return "1";
             }
@@ -50,7 +55,7 @@ namespace SaaS_App.DAL
         }
 
 
-        public bool Update(Tb_Transporte Obj)
+        public string Update(Tb_Transportadora Obj)
         {
 
             MySqlConnection Conexao = new MySqlConnection();
@@ -58,8 +63,8 @@ namespace SaaS_App.DAL
             Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
 
-            Sql.Append("UPDATE db_app.tb_transporte SET vNom_Transportadora = @vNom_Transportadora, vDes_Observacao = @vDes_Observacao, iCod_Empresa = @iCod_Empresa" +
-                       " WHERE iCod_Transporte = @iCod_Transporte");
+            Sql.Append("UPDATE db_app.tb_transportadora SET vNom_Transportadora = @vNom_Transportadora, vDes_Observacao = @vDes_Observacao, iCod_Conta = @iCod_Conta, " +
+                       "vTelefone1 = @vTelefone1, vTelefone2 = @vTelefone2, vTelefone3 = @vTelefone3, vTelefone4 = @vTelefone4 WHERE iCod_Transportadora = @iCod_Transportadora");
 
             try
             {
@@ -67,17 +72,22 @@ namespace SaaS_App.DAL
 
                 Comando.Connection = Conexao;
                 Comando.CommandText = Sql.ToString();
-                Comando.Parameters.AddWithValue("@iCod_Transporte", Obj.iCod_Transporte);
+                Comando.Parameters.AddWithValue("@iCod_Transportadora", Obj.iCod_Transportadora);
                 Comando.Parameters.AddWithValue("@vNom_Transportadora", Obj.vNom_Transportadora);
                 Comando.Parameters.AddWithValue("@vDes_Observacao", Obj.vDes_Observacao);
+                Comando.Parameters.AddWithValue("@vTelefone1", Obj.vTelefone1);
+                Comando.Parameters.AddWithValue("@vTelefone2", Obj.vTelefone2);
+                Comando.Parameters.AddWithValue("@vTelefone3", Obj.vTelefone3);
+                Comando.Parameters.AddWithValue("@vTelefone4", Obj.vTelefone4);
+
                 Comando.ExecuteNonQuery();
-                return true;
+                return "1";
 
             }
             catch (Exception ex)
             {
                 var erro = ex.Message;
-                return false;
+                return erro.ToString();
             }
             finally
             {
@@ -91,14 +101,14 @@ namespace SaaS_App.DAL
         }
 
 
-        public bool Delete(string iCod_Transporte)
+        public bool Delete(string iCod_Transportadora)
         {
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
             Comando.CommandTimeout = 120;
             StringBuilder Sql = new StringBuilder();
-            Sql.Append("DELETE FROM db_app.tb_transporte WHERE iCod_Transporte = '" + iCod_Transporte + "'");
+            Sql.Append("DELETE FROM db_app.tb_transportadora WHERE iCod_Transportadora = '" + iCod_Transportadora + "'");
 
             try
             {
@@ -124,15 +134,14 @@ namespace SaaS_App.DAL
         }
 
 
-        public List<Tb_Transporte> Retrieve(String Sql)
+        public List<Tb_Transportadora> Retrieve(String Sql)
         {
-            List<Tb_Transporte> Lista = new List<Tb_Transporte>();
-            Tb_Transporte Obj = new Tb_Transporte();
+            List<Tb_Transportadora> Lista = new List<Tb_Transportadora>();
+            Tb_Transportadora Obj = new Tb_Transportadora();
 
             MySqlConnection Conexao = new MySqlConnection();
             MySqlCommand Comando = new MySqlCommand();
-            
-            //MySqlDataReader Reader = new MySqlDataReader();
+            MySqlDataReader Reader;
 
             try
             {
@@ -142,19 +151,25 @@ namespace SaaS_App.DAL
                 Comando.CommandText = Sql;
                 Comando.CommandType = System.Data.CommandType.Text;
                 Comando.Connection = Conexao;
-                MySqlDataReader Reader = Comando.ExecuteReader();
+                Reader = Comando.ExecuteReader();
 
                 if (Reader.HasRows)
                 {
                     while (Reader.Read())
                     {
 
-                        Obj = new Tb_Transporte();
+                        Obj = new Tb_Transportadora();
+                        Obj.iCod_Conta = new Tb_Conta();
 
-                        Obj.iCod_Transporte = Convert.ToInt32(Reader["iCod_Transporte"]);
+                        Obj.iCod_Transportadora = Convert.ToInt32(Reader["iCod_Transportadora"]);
                         Obj.vNom_Transportadora = Convert.ToString(Reader["vNom_Transportadora"]);
-                        Obj.iCod_Empresa = Convert.ToInt32(Reader["iCod_Empresa"]);
+                        Obj.iCod_Conta.iCod_Conta = Convert.ToInt32(Reader["iCod_Conta"]);
                         Obj.vDes_Observacao = Convert.ToString(Reader["vDes_Observacao"]);
+                        Obj.vTelefone1 = Convert.ToString(Reader["vTelefone1"]);
+                        Obj.vTelefone2 = Convert.ToString(Reader["vTelefone2"]);
+                        Obj.vTelefone3 = Convert.ToString(Reader["vTelefone3"]);
+                        Obj.vTelefone4 = Convert.ToString(Reader["vTelefone4"]);
+
                         Lista.Add(Obj);
                     }
                 }
