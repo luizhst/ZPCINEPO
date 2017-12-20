@@ -62,10 +62,9 @@
                                         <span class="help-block"></span>
                                     </div>
                                 </div>
-
+                                <br />
                             </div>
 
-                            <br />
                             <div>
                                 <asp:Button runat="server" CssClass="btn btn-success" ID="btn_Registrar" OnClick="btn_Registrar_Click" Text="Cadastrar" />
                             </div>

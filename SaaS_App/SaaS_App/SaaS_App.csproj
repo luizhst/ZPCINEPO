@@ -121,6 +121,7 @@
     <None Include="packages.config" />
     <Content Include="Forms\Acesso\Acesso.aspx" />
     <Content Include="Forms\Principal.aspx" />
+    <Content Include="Forms\Saida\Saida-Produto.aspx" />
     <Content Include="Forms\Sair.aspx" />
     <Content Include="img\acesso\01_Icon_User_Disable.png" />
     <Content Include="img\acesso\02_Icon_Empresa_Disable.png" />
@@ -217,6 +218,7 @@
     <Compile Include="BLL\Tb_Transportadora_BO.cs" />
     <Compile Include="BLL\Tb_Produto_BO.cs" />
     <Compile Include="Conn\Conexao.cs" />
+    <Compile Include="DAL\Tb_Saida_DAO.cs" />
     <Compile Include="DAL\Tb_Tipo_Veiculo_DAO.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
     <Compile Include="DAL\Tb_Empresa_DAO.cs" />
@@ -225,6 +227,7 @@
     <Compile Include="DAL\Tb_Produto_DAO.cs" />
     <Compile Include="Entidades\Tb_Conta.cs" />
     <Compile Include="Entidades\Tb_Empresa.cs" />
+    <Compile Include="Entidades\Tb_Saida.cs" />
     <Compile Include="Entidades\Tb_Tipo_Veiculo.cs" />
     <Compile Include="Entidades\Tb_Veiculo.cs" />
     <Compile Include="Entidades\Tb_Transportadora.cs" />
@@ -291,6 +294,13 @@
     </Compile>
     <Compile Include="Forms\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Saida\Saida-Produto.aspx.cs">
+      <DependentUpon>Saida-Produto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Saida\Saida-Produto.aspx.designer.cs">
+      <DependentUpon>Saida-Produto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Sair.aspx.cs">
       <DependentUpon>Sair.aspx</DependentUpon>

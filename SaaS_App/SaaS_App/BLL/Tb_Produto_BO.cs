@@ -72,6 +72,31 @@ namespace SaaS_App.BLL
 
         }
 
+        /// <summary>
+        /// Função da tela de lancamento de saída de produtos
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <param name="saida"></param>
+        /// <returns></returns>
+        public string SaidaProduto(Tb_Produto produto, Tb_Saida saida)
+        {
+            try
+            {
+
+
+
+
+                return "1";
+
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+
+        }
+
 
         //fim classe
     }

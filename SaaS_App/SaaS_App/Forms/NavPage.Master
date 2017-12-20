@@ -53,7 +53,7 @@
                             <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Controle<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a runat="server" enable="false" href="#">Entrada Produtos</a></li>
-                                <li><a runat="server" enable="false" href="#">Saída Produtos</a></li>
+                                <li><a runat="server" enable="false" href="~/Forms/Saida/Saida-Produto.aspx">Saída Produtos</a></li>
                                 <li class="divider"></li>
                                 <li><a runat="server" enable="false" href="#">Acerto Veiculos</a></li>
 

@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="box-title">Contato</h3>
+                            <h4 class="box-title">Contato</h4>
                             <hr />
                             <div class="row">
                                 <div class="col-md-6">
@@ -65,7 +65,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h3 class="box-title">Endereço</h3>
+                            <h4 class="box-title">Endereço</h4>
                             <hr />
                             <div class="row">
                                 <div class="col-md-4">
