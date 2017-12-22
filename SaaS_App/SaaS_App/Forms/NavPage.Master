@@ -19,15 +19,18 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/TopBar.css" />
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" rel="stylesheet" media="screen" />
-    <asp:PlaceHolder runat="server">
-    </asp:PlaceHolder>
+    <asp:PlaceHolder runat="server"></asp:PlaceHolder>
 
 </head>
 <body>
-    <form runat="server">
 
-        
+
+
+
+    <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -42,7 +45,6 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/Forms/Principal.aspx">AGI - Controle de Gestão</a>--%>
-
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -52,10 +54,10 @@
                         <li class="dropdown">
                             <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Controle<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a runat="server" enable="false" href="#">Entrada Produtos</a></li>
+                                <%--<li><a runat="server" enable="false" href="#">Entrada Produtos</a></li>--%>
                                 <li><a runat="server" enable="false" href="~/Forms/Saida/Saida-Produto.aspx">Saída Produtos</a></li>
-                                <li class="divider"></li>
-                                <li><a runat="server" enable="false" href="#">Acerto Veiculos</a></li>
+                                <%--<li class="divider"></li>--%>
+                                <li><%--<a runat="server" enable="false" href="#">Acerto Veiculos</a>--%></li>
 
                                 <%--<li class="divider"></li>--%>
                             </ul>
@@ -76,10 +78,7 @@
                         <li><a runat="server" href="#">Relatórios</a></li>
 
                     </ul>
-
-
-
-
+                    
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Minha Conta<span class="caret"></span></a>

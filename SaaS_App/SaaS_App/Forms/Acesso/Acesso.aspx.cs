@@ -19,9 +19,6 @@ namespace SaaS_App.Forms.Acesso
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string StrConn = ConfigurationManager.ConnectionStrings["SaaSConnection"].ConnectionString;
-
-            Label1.Text = StrConn;
 
         }
 

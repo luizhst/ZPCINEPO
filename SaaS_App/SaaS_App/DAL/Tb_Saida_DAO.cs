@@ -37,7 +37,7 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@vQtd_Saida", Obj.vQtd_Saida);
                 Comando.Parameters.AddWithValue("@vQtd_EstoqueAnt", Obj.vQtd_EstoqueAnt);
                 Comando.Parameters.AddWithValue("@vQtd_EstoqueAtual", Obj.vQtd_EstoqueAtual);
-                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta);
+                Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta.iCod_Conta);
                 Comando.Parameters.AddWithValue("@dData_Saida", Obj.dData_Saida);
 
                 Comando.ExecuteNonQuery();

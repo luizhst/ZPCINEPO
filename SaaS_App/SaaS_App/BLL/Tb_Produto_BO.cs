@@ -11,6 +11,8 @@ namespace SaaS_App.BLL
     {
 
         Tb_Produto_DAO DAO = new Tb_Produto_DAO();
+        Tb_Saida_DAO SaidaDAO = new Tb_Saida_DAO();
+
 
         /// <summary>
         /// Carrega a lista de produtos cadastrados no banco de dados
@@ -83,9 +85,9 @@ namespace SaaS_App.BLL
             try
             {
 
-
-
-
+                DAO.Update(produto);
+                SaidaDAO.Insert(saida);
+                
                 return "1";
 
             }

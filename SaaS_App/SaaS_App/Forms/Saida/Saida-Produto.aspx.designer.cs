@@ -22,6 +22,15 @@ namespace SaaS_App.Forms.Saida {
         protected global::System.Web.UI.WebControls.DropDownList Drop_Produtos;
         
         /// <summary>
+        /// Controle UpdatePanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
+        
+        /// <summary>
         /// Controle txt_QtdEstoque.
         /// </summary>
         /// <remarks>
@@ -47,14 +56,5 @@ namespace SaaS_App.Forms.Saida {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Registrar;
-        
-        /// <summary>
-        /// Controle btn_ConfirmarLancamentos.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_ConfirmarLancamentos;
     }
 }
