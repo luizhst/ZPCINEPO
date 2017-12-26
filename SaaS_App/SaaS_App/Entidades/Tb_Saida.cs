@@ -14,6 +14,7 @@ namespace SaaS_App.Entidades
         public string vQtd_EstoqueAnt { get; set; }
         public string vQtd_EstoqueAtual { get; set; }
         public DateTime dData_Saida { get; set; }
+        public bool bFlag_Entrada { get; set; }
 
         public override string ToString()
         {

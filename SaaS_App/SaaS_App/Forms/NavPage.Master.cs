@@ -4,16 +4,21 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using SaaS_App.BLL;
 
 namespace SaaS_App.Forms
 {
     public partial class NavPage : System.Web.UI.MasterPage
     {
+
+        string Nom_Conta;
+        Func_Global Pub = new Func_Global();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
             Valida_Login();
-            
+
         }
 
         /// <summary>
@@ -27,6 +32,9 @@ namespace SaaS_App.Forms
             {
                 Response.Redirect("~/Forms/Sair.aspx");
             }
+            
+            Nom_Conta = Pub.DeCifraTexto(Session["NOME_USUARIO"].ToString());
+
 
         }
 

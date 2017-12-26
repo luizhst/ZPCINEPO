@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SaaS_App.BLL;
+using SaaS_App.DAL;
+using SaaS_App.Entidades;
+
 
 namespace SaaS_App.Forms
 {
@@ -33,6 +36,9 @@ namespace SaaS_App.Forms
             {
                 Verifica_Empresa();
             }
+
+            //Atualiza todas as informações da página principal
+            Atualiza_Indicadores();
             
         }
 
@@ -52,6 +58,21 @@ namespace SaaS_App.Forms
                 Response.Redirect("~/Forms/Cadastro/Cadastro-Empresa.aspx");
             }
                         
+        }
+
+
+        private void Atualiza_Indicadores()
+        {
+
+            List<Tb_Produto> Lista = new List<Tb_Produto>();
+            Tb_Produto_BO Produto_BO = new Tb_Produto_BO();
+            Lista = Produto_BO.Buscar_Produtos(ID_USUARIO);
+            grid_produtos.DataSource = Lista;
+            grid_produtos.DataBind();
+
+            GridView1.DataSource = Lista;
+            GridView1.DataBind();
+
         }
     }
 }

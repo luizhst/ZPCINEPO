@@ -104,6 +104,7 @@ namespace SaaS_App.Forms.Acesso
                 {
                     //define o usuário logado na sessão
                     Session["ID_USUARIO"] = Usuario_Logado.iCod_Conta;
+                    Session["NOME_USUARIO"] = Usuario_Logado.vDes_Login;
 
                     string vStrSuccess = "'Usuario autenticado com sucesso, você será direcionado agora'";
                     ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);

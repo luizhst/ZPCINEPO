@@ -6,7 +6,7 @@
     <br />
     <br />
 
-    <h3>Bem vindo ao sistema</h3>
+    <h4>Resultados de Hoje</h4>
 
     <hr />
 
@@ -68,58 +68,75 @@
     <br />
 
     <%-- Tabela de Saídas Hoje e Produtos Estoque Atual --%>
+    <hr />
 
     <div class="row">
-        <h4>Produtos Cadastrados</h4>
+      
+        <div class="col-md-6">
 
-        <asp:gridview id="grid_produtos" cssclass="tablesaw table-striped table-hover table-bordered table" autogeneratecolumns="False" runat="server">
+            <h4>Produtos Cadastrados</h4>
 
-            <Columns>
+            <%--Tabela com os produtos cadastrados--%>
+            <asp:GridView ID="grid_produtos" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
 
-                <asp:TemplateField HeaderText="Nome" ItemStyle-Width="50%">
-                    <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
-                </asp:TemplateField>
+                <Columns>
+                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
+                        <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
+                    </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Estoque Minimo" ItemStyle-Width="25%">
-                    <ItemTemplate><%#Eval("vQtd_Min_Estoque") %> </ItemTemplate>
-                </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
+                        <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
+                    </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Total em Estoque" ItemStyle-Width="25%">
-                    <ItemTemplate><%#Eval("vQtd_Estoque") %> </ItemTemplate>
-                </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="15%">
+                        <ItemTemplate><%#Eval("vQtd_Estoque") %> </ItemTemplate>
+                    </asp:TemplateField>
 
 
-            </Columns>
+                </Columns>
 
-        </asp:gridview>
+            </asp:GridView>
+
+            </div>
         
+
+            <div class="col-md-6">
+
+            <h4>Produtos Cadastrados 2</h4>
+
+            <%--Tabela com os produtos cadastrados--%>
+            <asp:GridView ID="GridView1" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
+
+                <Columns>
+                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
+                        <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
+                        <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="15%">
+                        <ItemTemplate><%#Eval("vQtd_Estoque") %> </ItemTemplate>
+                    </asp:TemplateField>
+
+
+                </Columns>
+
+            </asp:GridView>
+
+        </div>
+
     </div>
 
+    <br />
 
     <div class="row">
         <h4>Ultimas Saidas</h4>
 
-        <asp:gridview id="grid_saida" cssclass="tablesaw table-striped table-hover table-bordered table" autogeneratecolumns="False" runat="server">
+        <asp:ListView ID="List_Lancamentos" runat="server">
+        </asp:ListView>
 
-            <Columns>
-
-                <asp:TemplateField HeaderText="Nome" ItemStyle-Width="50%">
-                    <ItemTemplate><%#Eval("dData_Saida") %> </ItemTemplate>
-                </asp:TemplateField>
-
-                <asp:TemplateField HeaderText="Estoque Minimo" ItemStyle-Width="25%">
-                    <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
-                </asp:TemplateField>
-
-                <asp:TemplateField HeaderText="Total em Estoque" ItemStyle-Width="25%">
-                    <ItemTemplate><%#Eval("vQtd_Saida") %> </ItemTemplate>
-                </asp:TemplateField>
-
-
-            <%--</Columns>--%>
-
-        </asp:gridview>
-        
     </div>
 
 

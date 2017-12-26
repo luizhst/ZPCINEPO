@@ -121,6 +121,7 @@
     <None Include="packages.config" />
     <Content Include="Forms\Acesso\Acesso.aspx" />
     <Content Include="Forms\Principal.aspx" />
+    <Content Include="Forms\Saida\Entrada-Produto.aspx" />
     <Content Include="Forms\Saida\Saida-Produto.aspx" />
     <Content Include="Forms\Sair.aspx" />
     <Content Include="img\acesso\01_Icon_User_Disable.png" />
@@ -294,6 +295,13 @@
     </Compile>
     <Compile Include="Forms\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Saida\Entrada-Produto.aspx.cs">
+      <DependentUpon>Entrada-Produto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Saida\Entrada-Produto.aspx.designer.cs">
+      <DependentUpon>Entrada-Produto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Saida\Saida-Produto.aspx.cs">
       <DependentUpon>Saida-Produto.aspx</DependentUpon>
