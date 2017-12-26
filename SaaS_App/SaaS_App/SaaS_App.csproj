@@ -215,6 +215,7 @@
     <Compile Include="BLL\Func_Global.cs" />
     <Compile Include="BLL\Tb_Conta_BO.cs" />
     <Compile Include="BLL\Tb_Empresa_BO.cs" />
+    <Compile Include="BLL\Tb_Saida_BO.cs" />
     <Compile Include="BLL\Tb_Veiculo_BO.cs" />
     <Compile Include="BLL\Tb_Transportadora_BO.cs" />
     <Compile Include="BLL\Tb_Produto_BO.cs" />
