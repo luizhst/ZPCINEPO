@@ -10,7 +10,7 @@ namespace SaaS_App.Conn
     public class Conexao
     {
 
-        string StrConn = ConfigurationManager.ConnectionStrings["SaaSConnection"].ConnectionString;
+        string StrConn = ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString;
         public MySqlConnection GetConexao() { 
        MySqlConnection oSQLConn = new MySqlConnection();
             try

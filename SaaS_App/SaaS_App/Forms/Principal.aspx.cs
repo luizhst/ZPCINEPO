@@ -70,12 +70,25 @@ namespace SaaS_App.Forms
             grid_produtos.DataSource = Lista.OrderByDescending(x => Convert.ToInt32(x.vQtd_Estoque)).ToList();
             grid_produtos.DataBind();
 
-            GridView1.DataSource = Lista.OrderByDescending(x => Convert.ToInt32(x.vQtd_Estoque)).ToList();
-            GridView1.DataBind();
 
+            List<Tb_Saida> Lancamentos = new List<Tb_Saida>();
+            Tb_Saida_BO Saida_BO = new Tb_Saida_BO();
+            Lancamentos = Saida_BO.Buscar_Saidas(ID_USUARIO);
+
+            List<Tb_Saida> LancamentosEntrada = new List<Tb_Saida>();
+            List<Tb_Saida> LancamentosSaida = new List<Tb_Saida>();
+
+            LancamentosEntrada = Lancamentos.Where(x => x.bFlag_Entrada == true).ToList();
+            LancamentosSaida = Lancamentos.Where(x => x.bFlag_Entrada == false).ToList();
+
+            GridSaidas.DataSource = LancamentosSaida.Take(5);
+            GridSaidas.DataBind();
+
+            GridEntradas.DataSource = LancamentosEntrada.Take(5);
+            GridEntradas.DataBind();
+            
             double TotalCusto = 0;
             double TotalReceita = 0;
-
 
             for (int item = 0; item <= Lista.Count - 1; item++)
             {
@@ -83,23 +96,16 @@ namespace SaaS_App.Forms
                 TotalReceita = TotalReceita + (Convert.ToInt32(Lista[item].vQtd_Estoque) * Convert.ToDouble(Lista[item].dPreco_Venda));
             }
 
-            Lbl_CustoTotal.Text = "R$ " + TotalCusto.ToString();
-            Lbl_ReceitaTotal.Text = "R$ " + TotalReceita.ToString();
+            Lbl_CustoTotal.Text = TotalCusto.ToString("C");
+            Lbl_ReceitaTotal.Text = TotalReceita.ToString("C");
 
             var LucroBruto = Convert.ToDouble(TotalReceita) - Convert.ToDouble(TotalCusto);
-            Lbl_LucroBruto.Text = "R$ " + LucroBruto.ToString();
+            Lbl_LucroBruto.Text = LucroBruto.ToString("C");
 
             var TotalItens = Lista.Sum(x => Convert.ToInt32(x.vQtd_Estoque));
-            Lbl_TotalItens.Text = TotalItens.ToString();
+            Lbl_TotalItens.Text = TotalItens.ToString("n0");
 
-
-            List<Tb_Saida> Lancamentos = new List<Tb_Saida>();
-            Tb_Saida_BO Saida_BO = new Tb_Saida_BO();
-            Lancamentos = Saida_BO.Buscar_Saidas(ID_USUARIO);
-
-            GridSaidas.DataSource = Lancamentos;
-            GridSaidas.DataBind();
-
+            
         }
     }
 }

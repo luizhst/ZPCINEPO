@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="login-form">
                                         <div class="form-details">
-                                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                                            
                                             <label class="mail">
                                                 <asp:TextBox TextMode="Email" CssClass="mail" runat="server" placeholder="E-mail" ID="tx_cad_email"></asp:TextBox>
                                             </label>
@@ -71,10 +71,10 @@
                                     <div class="login-form">
                                         <div class="form-details">
                                             <label class="user">
-                                                <asp:TextBox TextMode="Email" CssClass="mail" required="true" runat="server" placeholder="E-mail" ID="txt_Email">nova@conta.com.br</asp:TextBox>
+                                                <asp:TextBox TextMode="Email" CssClass="mail" required="true" runat="server" placeholder="E-mail" ID="txt_Email"></asp:TextBox>
                                             </label>
                                             <label class="pass">
-                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="txt_Senha">123</asp:TextBox>
+                                                <asp:TextBox TextMode="Password" CssClass="password" runat="server" placeholder="Senha" ID="txt_Senha"></asp:TextBox>
                                             </label>
                                         </div>
                                         <asp:Button runat="server" CssClass="form-btn btn-success" ID="Btn_Acessar" OnClick="Btn_Acessar_Click" Text="Acessar" />

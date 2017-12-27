@@ -78,22 +78,25 @@
 
         <div class="col-md-6">
 
-            <h4>Produtos Cadastrados</h4>
-
+            <h4>Últimas Saídas</h4>
             <%--Tabela com os produtos cadastrados--%>
-            <asp:GridView ID="grid_produtos" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server" AllowPaging="False" PagerSettings-Mode="NextPrevious" PageSize="5" PagerSettings-PageButtonCount="5">
+            <asp:GridView ID="GridSaidas" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
 
                 <Columns>
-                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
-                        <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
+                    <asp:TemplateField HeaderText="Produto" ItemStyle-Width="61%">
+                        <ItemTemplate><%# Eval("iCod_Produto.vNom_Produto") %> </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
-                        <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
+                    <asp:TemplateField HeaderText="Antes" ItemStyle-Width="13%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_EstoqueAnt")).ToString("n0") %> </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="15%">
-                        <ItemTemplate><%#Eval("vQtd_Estoque") %> </ItemTemplate>
+                    <asp:TemplateField HeaderText="Saída" ItemStyle-Width="13%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_Saida")).ToString("n0") %> </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Depois" ItemStyle-Width="13%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_EstoqueAtual")).ToString("n0") %> </ItemTemplate>
                     </asp:TemplateField>
 
                 </Columns>
@@ -105,22 +108,25 @@
 
         <div class="col-md-6">
 
-            <h4>Produtos Cadastrados 2</h4>
-
+            <h4>Últimas Entradas</h4>
             <%--Tabela com os produtos cadastrados--%>
-            <asp:GridView ID="GridView1" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
+            <asp:GridView ID="GridEntradas" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
 
                 <Columns>
-                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
-                        <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
+                    <asp:TemplateField HeaderText="Produto" ItemStyle-Width="61%">
+                        <ItemTemplate><%#Eval("iCod_Produto.vNom_Produto") %> </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
-                        <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
+                    <asp:TemplateField HeaderText="Antes" ItemStyle-Width="13%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_EstoqueAnt")).ToString("n0") %> </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="15%">
-                        <ItemTemplate><%#Eval("vQtd_Estoque") %> </ItemTemplate>
+                    <asp:TemplateField HeaderText="Entrada" ItemStyle-Width="13%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_Saida")).ToString("n0") %> </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Depois" ItemStyle-Width="13%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_EstoqueAtual")).ToString("n0") %> </ItemTemplate>
                     </asp:TemplateField>
 
 
@@ -132,36 +138,34 @@
 
     </div>
 
-    <br />
+    <hr />
 
     <div class="row">
-        <h4>Ultimas Saidas</h4>
+        <div class="col-md-12">
 
-        <%--Tabela com os produtos cadastrados--%>
-        <asp:GridView ID="GridSaidas" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
+            <h4>Produtos Cadastrados</h4>
 
-            <Columns>
-                <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
-                    <ItemTemplate><%#Eval("iCod_Produto.vNom_Produto") %> </ItemTemplate>
-                </asp:TemplateField>
+            <%--Tabela com os produtos cadastrados--%>
+            <asp:GridView ID="grid_produtos" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server" AllowPaging="False" PagerSettings-Mode="NextPrevious" PageSize="5" PagerSettings-PageButtonCount="5">
 
-                <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
-                    <ItemTemplate><%#Eval("vQtd_EstoqueAnt") %> </ItemTemplate>
-                </asp:TemplateField>
+                <Columns>
+                    <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
+                    </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="25%">
-                    <ItemTemplate><%#Eval("vQtd_Saida") %> </ItemTemplate>
-                </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nome" ItemStyle-Width="80%">
+                        <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
+                    </asp:TemplateField>
 
-                <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="25%">
-                    <ItemTemplate><%#Eval("vQtd_EstoqueAtual") %> </ItemTemplate>
-                </asp:TemplateField>
-                
-            </Columns>
+                    <asp:TemplateField HeaderText="Estoque" ItemStyle-Width="10%" ItemStyle-HorizontalAlign="Center">
+                        <ItemTemplate><%# Convert.ToInt32(Eval("vQtd_Estoque")).ToString("n0") %> </ItemTemplate>
+                    </asp:TemplateField>
 
-        </asp:GridView>
+                </Columns>
 
+            </asp:GridView>
 
+        </div>
     </div>
 
 
