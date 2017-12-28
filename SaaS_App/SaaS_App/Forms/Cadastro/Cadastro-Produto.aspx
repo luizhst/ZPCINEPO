@@ -65,6 +65,19 @@
                                 <br />
                             </div>
 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-5">Categoria do Produto</label>
+                                        <asp:DropDownList runat="server" AppendDataBoundItems="true" CssClass="dropdown form-control" SelectionMode="sigle"   MaxLength="50" ID="drplstCategoriaProduto"></asp:DropDownList>
+                                        <span class="help-block"></span>
+                                    </div>
+                                </div>
+                           </div>
+
+                                <br />
+                            </div>
+
                             <div>
                                 <asp:Button runat="server" CssClass="btn btn-success" ID="btn_Registrar" OnClick="btn_Registrar_Click" Text="Cadastrar" />
                             </div>

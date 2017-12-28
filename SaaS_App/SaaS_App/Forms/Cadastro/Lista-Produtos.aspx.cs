@@ -48,5 +48,10 @@ namespace SaaS_App.Forms.Cadastro
 
         }
 
+        protected void grid_produtos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grid_produtos.PageIndex = e.NewPageIndex;
+            grid_produtos.DataBind();
+        }
     }
 }

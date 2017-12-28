@@ -14,3 +14,26 @@
 .mobile_search {
     margin: 6px 0 5px 0;
 }
+
+.tablesaw a {
+    margin: 5px;
+    border: 1px solid black;
+    padding: 4px 7px;
+    background: silver;
+}
+
+.tablesaw a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+}
+.tablesaw span {
+    text-decoration: none;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+    margin: 5px;
+    border: 1px solid black;
+    padding: 4px 7px;
+}

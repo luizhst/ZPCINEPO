@@ -58,6 +58,15 @@ namespace SaaS_App.Forms.Cadastro {
         protected global::System.Web.UI.WebControls.TextBox txt_QtdMinEstoque;
         
         /// <summary>
+        /// Controle drplstCategoriaProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drplstCategoriaProduto;
+        
+        /// <summary>
         /// Controle btn_Registrar.
         /// </summary>
         /// <remarks>

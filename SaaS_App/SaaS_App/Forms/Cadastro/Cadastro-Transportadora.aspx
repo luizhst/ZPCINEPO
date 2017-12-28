@@ -33,24 +33,24 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="control-label col-md-5">Telefone 1</label>
-                                    <asp:TextBox runat="server" ID="txt_telefone1" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_telefone1" ClientIDMode="Static" MaxLength="150" CssClass="form-control"></asp:TextBox>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="control-label col-md-5">Telefone 2</label>
-                                    <asp:TextBox runat="server" ID="txt_telefone2" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_telefone2" ClientIDMode="Static" MaxLength="150" CssClass="form-control"></asp:TextBox>
                                     <span class="help-block"></span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="control-label col-md-5">Telefone 3</label>
-                                    <asp:TextBox runat="server" ID="txt_telefone3" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_telefone3" ClientIDMode="Static" MaxLength="150" CssClass="form-control"></asp:TextBox>
                                     <span class="help-block"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="control-label col-md-5">Telefone 4</label>
-                                    <asp:TextBox runat="server" ID="txt_telefone4" MaxLength="150" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txt_telefone4" ClientIDMode="Static" MaxLength="150" CssClass="form-control"></asp:TextBox>
                                     <span class="help-block"></span>
                                 </div>
                             </div>

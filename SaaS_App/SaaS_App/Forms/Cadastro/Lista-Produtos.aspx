@@ -22,8 +22,8 @@
 
                         <div>
                             <%--Tabela com os produtos cadastrados--%>
-                            <asp:GridView ID="grid_produtos" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
-
+                            <asp:GridView ID="grid_produtos"  OnPageIndexChanging="grid_produtos_PageIndexChanging" ClientIDMode="Static" AllowPaging="true" AllowSorting="true" PageSize="10" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
+                               
                                 <Columns>
                                     <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
                                         <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>

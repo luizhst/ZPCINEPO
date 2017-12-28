@@ -10,6 +10,7 @@ namespace SaaS_App.Entidades
 
         public int iCod_Produto { get; set; }
         public int iCod_Conta { get; set; }
+        public int iCod_Categoria { get; set; }
         public string vNom_Produto { get; set; }
         public double dPreco_Custo { get; set; }
         public double dPreco_Venda { get; set; }

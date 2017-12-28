@@ -232,10 +232,12 @@
     <Compile Include="BLL\Tb_Conta_BO.cs" />
     <Compile Include="BLL\Tb_Empresa_BO.cs" />
     <Compile Include="BLL\Tb_Saida_BO.cs" />
+    <Compile Include="BLL\Tb_Categoria_Produto_BO.cs" />
     <Compile Include="BLL\Tb_Veiculo_BO.cs" />
     <Compile Include="BLL\Tb_Transportadora_BO.cs" />
     <Compile Include="BLL\Tb_Produto_BO.cs" />
     <Compile Include="Conn\Conexao.cs" />
+    <Compile Include="DAL\Tb_Categoria_Produto_DAO.cs" />
     <Compile Include="DAL\Tb_Saida_DAO.cs" />
     <Compile Include="DAL\Tb_Tipo_Veiculo_DAO.cs" />
     <Compile Include="DAL\Tb_Conta_DAO.cs" />
@@ -247,6 +249,7 @@
     <Compile Include="Entidades\Tb_Empresa.cs" />
     <Compile Include="Entidades\Tb_Saida.cs" />
     <Compile Include="Entidades\Tb_Tipo_Veiculo.cs" />
+    <Compile Include="Entidades\Tb_Categoria_Produto.cs" />
     <Compile Include="Entidades\Tb_Veiculo.cs" />
     <Compile Include="Entidades\Tb_Transportadora.cs" />
     <Compile Include="Entidades\Tb_Produto.cs" />

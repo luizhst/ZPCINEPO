@@ -10,6 +10,26 @@
             keepStatic: true
         });
 
+        $('#txt_telefone1').inputmask({
+            mask: ['(99) 9999-9999'],
+            keepStatic: true
+        });
+
+        $('#txt_telefone2').inputmask({
+            mask: ['(99) 9999-9999'],
+            keepStatic: true
+        });
+
+        $('#txt_telefone3').inputmask({
+            mask: ['(99) 9999-9999'],
+            keepStatic: true
+        });
+
+        $('#txt_telefone4').inputmask({
+            mask: ['(99) 9999-9999'],
+            keepStatic: true
+        });
+
         $('#txt_Fone2').inputmask({
             mask: ['(99) 99999-9999'],
             keepStatic: true
@@ -25,9 +45,7 @@
 
         $(function () {
             $('[id$=txt_PrecoVenda]').maskMoney({ prefix: 'R$ ', allowNegative: true, thousands: '.', decimal: ',', affixesStay: false });
-        });
-        txt_PrecoVenda
-
+        });       
     });
 })(jQuery);
 

@@ -18,6 +18,7 @@ namespace SaaS_App.Forms.Cadastro
 
         Func_Global Pub = new Func_Global();
         Tb_Produto_BO Produto_BO = new Tb_Produto_BO();
+        List<Tb_Categoria_Produto> lista = new List<Tb_Categoria_Produto>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,7 +27,7 @@ namespace SaaS_App.Forms.Cadastro
             try
             {
                 ID_USUARIO = Session["ID_USUARIO"].ToString();
-                //Carrega_Produtos();
+                Preencher_DropList();
             }
             catch (Exception)
             {
@@ -68,9 +69,11 @@ namespace SaaS_App.Forms.Cadastro
                 Obj.vQtd_Min_Estoque = txt_QtdMinEstoque.Text;
                 Obj.dData_Cadastro = Convert.ToDateTime(DateTime.Now);
 
-                string retorno;
-                
-                retorno = Produto_BO.Valida_Produto(Obj);
+                Tb_Categoria_Produto Categoria = new Tb_Categoria_Produto();
+                string test = drplstCategoriaProduto.SelectedItem.Text;
+                Categoria = lista.Where(x => x.vNom_Categoria == drplstCategoriaProduto.SelectedItem.Text).FirstOrDefault();
+                Obj.iCod_Categoria = Categoria.iCod_Categoria;
+                string retorno = Produto_BO.Valida_Produto(Obj);
 
                 if (retorno == "1")
                 {
@@ -101,8 +104,27 @@ namespace SaaS_App.Forms.Cadastro
 
                 throw;
             }
-
-
         }
+
+        public void Preencher_DropList()
+        {
+
+            LimpaDropList();
+            List<Tb_Categoria_Produto> lista = new List<Tb_Categoria_Produto>();
+            Tb_Categoria_Produto_BO CategoriaBO = new Tb_Categoria_Produto_BO();
+            lista = CategoriaBO.Buscar_Categoria_Produto();
+
+            foreach (var item in lista)
+            {
+                drplstCategoriaProduto.Items.Add(item.vNom_Categoria);
+            }
+        }
+
+        public void LimpaDropList()
+        {
+            drplstCategoriaProduto.Items.Clear();
+            drplstCategoriaProduto.Items.Add("Definir");
+        }
+
     }
 }

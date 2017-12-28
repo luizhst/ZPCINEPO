@@ -21,7 +21,7 @@
 
                         <div>
                             <%--Tabela com os produtos cadastrados--%>
-                            <asp:GridView ID="grid_transportadores" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
+                            <asp:GridView ID="grid_transportadores" CssClass="tablesaw table-striped table-hover table-bordered table" PageSize="1" OnPageIndexChanging="grid_transportadores_PageIndexChanging" AllowPaging="true" AllowSorting="true" AutoGenerateColumns="False" runat="server">
 
                                 <Columns>
                                     <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
