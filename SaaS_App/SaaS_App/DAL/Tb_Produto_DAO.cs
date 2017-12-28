@@ -23,10 +23,10 @@ namespace SaaS_App.DAL
 
             Sql.Append("INSERT INTO db_app.tb_produto (iCod_Conta, vNom_Produto, dPreco_Custo, " +
                                                         "dPreco_Venda, vQtd_Estoque, vQtd_Min_Estoque," +
-                                                        "dData_Cadastro) VALUES " +
+                                                        "dData_Cadastro, iCod_Categoria) VALUES " +
                                                         "(@iCod_Conta, @vNom_Produto, @dPreco_Custo, " +
                                                         "@dPreco_Venda, @vQtd_Estoque, @vQtd_Min_Estoque," +
-                                                        "@dData_Cadastro)");
+                                                        "@dData_Cadastro, @iCod_Categoria)");
 
             try
             {
@@ -41,6 +41,7 @@ namespace SaaS_App.DAL
                 Comando.Parameters.AddWithValue("@vQtd_Min_Estoque", Obj.vQtd_Min_Estoque);
                 Comando.Parameters.AddWithValue("@dData_Cadastro", Obj.dData_Cadastro);
                 Comando.Parameters.AddWithValue("@iCod_Conta", Obj.iCod_Conta);
+                Comando.Parameters.AddWithValue("@iCod_Categoria", Obj.iCod_Categoria);
 
                 Comando.ExecuteNonQuery();
                 return "1";

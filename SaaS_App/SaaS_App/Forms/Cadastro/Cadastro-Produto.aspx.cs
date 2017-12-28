@@ -18,7 +18,8 @@ namespace SaaS_App.Forms.Cadastro
 
         Func_Global Pub = new Func_Global();
         Tb_Produto_BO Produto_BO = new Tb_Produto_BO();
-        List<Tb_Categoria_Produto> lista = new List<Tb_Categoria_Produto>();
+        Tb_Categoria_Produto_BO Categoria_BO = new Tb_Categoria_Produto_BO();
+        List<Tb_Categoria_Produto> categorias = new List<Tb_Categoria_Produto>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,13 +28,18 @@ namespace SaaS_App.Forms.Cadastro
             try
             {
                 ID_USUARIO = Session["ID_USUARIO"].ToString();
-                Preencher_DropList();
+                categorias = Categoria_BO.Buscar_Categoria_Produto();
+
             }
             catch (Exception)
             {
                 Response.Redirect("~/Forms/Sair.aspx");
             }
 
+            if (!IsPostBack)
+            {
+                Preencher_DropList();
+            }
 
         }
 
@@ -70,9 +76,11 @@ namespace SaaS_App.Forms.Cadastro
                 Obj.dData_Cadastro = Convert.ToDateTime(DateTime.Now);
 
                 Tb_Categoria_Produto Categoria = new Tb_Categoria_Produto();
-                string test = drplstCategoriaProduto.SelectedItem.Text;
-                Categoria = lista.Where(x => x.vNom_Categoria == drplstCategoriaProduto.SelectedItem.Text).FirstOrDefault();
+                string NomeCategoria = drplstCategoriaProduto.SelectedItem.Text;
+
+                Categoria = categorias.Where(x => x.vNom_Categoria == NomeCategoria).FirstOrDefault();
                 Obj.iCod_Categoria = Categoria.iCod_Categoria;
+
                 string retorno = Produto_BO.Valida_Produto(Obj);
 
                 if (retorno == "1")
@@ -81,7 +89,7 @@ namespace SaaS_App.Forms.Cadastro
                     ClientScript.RegisterStartupScript(GetType(), Guid.NewGuid().ToString(), "Msg_Sucesso(" + vStrSuccess + ");", true);
                     Limpa_Campos();
                     Response.Redirect("~/Forms/Cadastro/Lista-Produtos.aspx");
-                    
+
                 }
                 else if (retorno == "2")
                 {
@@ -110,15 +118,13 @@ namespace SaaS_App.Forms.Cadastro
         {
 
             LimpaDropList();
-            List<Tb_Categoria_Produto> lista = new List<Tb_Categoria_Produto>();
-            Tb_Categoria_Produto_BO CategoriaBO = new Tb_Categoria_Produto_BO();
-            lista = CategoriaBO.Buscar_Categoria_Produto();
 
-            foreach (var item in lista)
+            foreach (var item in categorias)
             {
                 drplstCategoriaProduto.Items.Add(item.vNom_Categoria);
             }
         }
+
 
         public void LimpaDropList()
         {
