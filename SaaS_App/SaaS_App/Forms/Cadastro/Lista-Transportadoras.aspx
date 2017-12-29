@@ -24,6 +24,13 @@
                             <asp:GridView ID="grid_transportadores" CssClass="tablesaw table-striped table-hover table-bordered table" PageSize="1" OnPageIndexChanging="grid_transportadores_PageIndexChanging" AllowPaging="true" AllowSorting="true" AutoGenerateColumns="False" runat="server">
 
                                 <Columns>
+                                    <asp:TemplateField ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"> 
+                                        <ItemTemplate>                        
+                                            <asp:ImageButton ID="BtnExcluirTransporte" CommandArgument='<%#Bind("iCod_Transportadora")%>' OnClick="BtnExcluirTransporte_Click"  CssClass="mimg" runat="server" Width= "20px" Height="20px" ImageUrl="https://www.shareicon.net/data/2015/05/04/33380_trash_256x256.png"/>
+                                        </ItemTemplate>
+                                        <HeaderTemplate> Excluir </HeaderTemplate>
+                                    </asp:TemplateField> 
+
                                     <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
                                         <ItemTemplate><%#Eval("iCod_Transportadora") %> </ItemTemplate>
                                     </asp:TemplateField>

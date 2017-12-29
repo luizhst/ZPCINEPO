@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SaaS_App.Entidades;
 using SaaS_App.BLL;
+using SaaS_App.DAL;
 
 namespace SaaS_App.Forms.Cadastro
 {
@@ -52,6 +53,15 @@ namespace SaaS_App.Forms.Cadastro
             grid_transportadores.PageIndex = e.NewPageIndex;
             grid_transportadores.DataBind();
 
+        }
+
+        protected void BtnExcluirTransporte_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = sender as ImageButton;
+            string Transporte = Convert.ToString(button.CommandArgument);
+            Tb_Transportadora_DAO DAO = new Tb_Transportadora_DAO();
+            DAO.Delete(Transporte);
+            Carregar_Transportadores();
         }
     }
 }

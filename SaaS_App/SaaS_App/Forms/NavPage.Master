@@ -19,7 +19,11 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Style/TopBar.css" />
     <link rel="stylesheet" type="text/css" runat="server" media="screen" href="~/Content/bootstrap.min.css" />
-
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1', { packages: ['corechart'] });
+    </script> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.min.css" rel="stylesheet" media="screen" />
     <asp:PlaceHolder runat="server"></asp:PlaceHolder>
 
@@ -76,7 +80,7 @@
                             </ul>
                         </li>
 
-                        <li><a runat="server" href="#">Relatórios</a></li>
+                        <li><a runat="server" href="~/Forms/Relatorios.aspx">Relatórios</a></li>
 
                     </ul>
 

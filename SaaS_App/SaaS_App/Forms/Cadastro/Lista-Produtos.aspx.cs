@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SaaS_App.Entidades;
 using SaaS_App.BLL;
+using SaaS_App.DAL;
 
 namespace SaaS_App.Forms.Cadastro
 {
@@ -52,6 +53,15 @@ namespace SaaS_App.Forms.Cadastro
         {
             grid_produtos.PageIndex = e.NewPageIndex;
             grid_produtos.DataBind();
+        }
+
+        protected void BtnExcluirProduto_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton button = sender as ImageButton;
+            string Produto = Convert.ToString(button.CommandArgument);
+             Tb_Produto_DAO DAO = new Tb_Produto_DAO();
+            DAO.Delete(Produto);
+            Carrega_Produtos();
         }
     }
 }

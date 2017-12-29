@@ -137,6 +137,7 @@
     <None Include="packages.config" />
     <Content Include="Forms\Acesso\Acesso.aspx" />
     <Content Include="Forms\Principal.aspx" />
+    <Content Include="Forms\Relatorios.aspx" />
     <Content Include="Forms\Saida\Entrada-Produto.aspx" />
     <Content Include="Forms\Saida\Saida-Produto.aspx" />
     <Content Include="Forms\Sair.aspx" />
@@ -315,6 +316,13 @@
     </Compile>
     <Compile Include="Forms\Principal.aspx.designer.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Relatorios.aspx.cs">
+      <DependentUpon>Relatorios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Relatorios.aspx.designer.cs">
+      <DependentUpon>Relatorios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Saida\Entrada-Produto.aspx.cs">
       <DependentUpon>Entrada-Produto.aspx</DependentUpon>

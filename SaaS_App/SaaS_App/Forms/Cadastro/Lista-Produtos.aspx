@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Produtos" Language="C#" MasterPageFile="~/Forms/NavPage.Master" AutoEventWireup="true" CodeBehind="Lista-Produtos.aspx.cs" Inherits="SaaS_App.Forms.Cadastro.Lista_Produtos" %>
+﻿<%@ Page Title="Produtos" Language="C#" MasterPageFile="~/Forms/NavPage.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="Lista-Produtos.aspx.cs" Inherits="SaaS_App.Forms.Cadastro.Lista_Produtos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
@@ -25,9 +25,16 @@
                             <asp:GridView ID="grid_produtos"  OnPageIndexChanging="grid_produtos_PageIndexChanging" ClientIDMode="Static" AllowPaging="true" AllowSorting="true" PageSize="10" CssClass="tablesaw table-striped table-hover table-bordered table" AutoGenerateColumns="False" runat="server">
                                
                                 <Columns>
+                                    <asp:TemplateField ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center"> 
+                                        <ItemTemplate>                        
+                                            <asp:ImageButton ID="BtnExcluirProduto" CommandArgument='<%#Bind("iCod_Produto")%>' OnClick="BtnExcluirProduto_Click"  CssClass="mimg" runat="server" Width= "20px" Height="20px" ImageUrl="https://www.shareicon.net/data/2015/05/04/33380_trash_256x256.png"/>
+                                        </ItemTemplate>
+                                        <HeaderTemplate> Excluir </HeaderTemplate>
+                                    </asp:TemplateField>   
+
                                     <asp:TemplateField HeaderText="Cod." ItemStyle-Width="10%">
                                         <ItemTemplate><%#Eval("iCod_Produto") %> </ItemTemplate>
-                                    </asp:TemplateField>
+                                    </asp:TemplateField>                                
 
                                     <asp:TemplateField HeaderText="Nome" ItemStyle-Width="40%">
                                         <ItemTemplate><%#Eval("vNom_Produto") %> </ItemTemplate>
